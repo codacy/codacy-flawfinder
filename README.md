@@ -1,9 +1,9 @@
-# Codacy CPPCheck
+# Codacy Flawfinder
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3bd4fdde0b9b43dd9aead3130d370c5d)](https://www.codacy.com/app/Codacy/codacy-cppcheck?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=codacy/codacy-cppcheck&amp;utm_campaign=Badge_Grade)
-[![Build Status](https://circleci.com/gh/codacy/codacy-cppcheck.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/codacy/codacy-cppcheck)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/???)](https://www.codacy.com/app/Codacy/codacy-flawfinder?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=codacy/codacy-flawfinder&amp;utm_campaign=Badge_Grade)
+[![Build Status](https://circleci.com/gh/codacy/codacy-flawfinder.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/codacy/codacy-flawfinder)
 
-This is the docker engine we use at Codacy to have [CPPCheck](http://cppcheck.sourceforge.net) support.
+This is the docker engine we use at Codacy to have [Flawfinder](https://www.dwheeler.com/flawfinder/) support.
 You can also create a docker to integrate the tool and language of your choice!
 Check the **Docs** section for more information.
 
@@ -12,7 +12,7 @@ Check the **Docs** section for more information.
 You can create the docker by doing:
 
 ```bash
-./scripts/publish.sh codacy-cppcheck <VERSION>
+./scripts/publish.sh codacy-flawfinder <VERSION>
 ```
 
 The docker is ran with the following command:

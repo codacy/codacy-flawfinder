@@ -1,4 +1,4 @@
-FROM codacy/codacy-cppcheck-base:latest
+FROM codacy/codacy-flawfinder-base:latest
 
 LABEL maintainer="team@codacy.com"
 
@@ -9,5 +9,5 @@ COPY --chown=docker:docker "target/docker/stage/opt/docker" "/opt/docker"
 COPY --chown=docker:docker src/main/resources/docs /docs
 
 USER docker
-ENTRYPOINT ["bin/codacy-cppcheck"]
+ENTRYPOINT ["bin/codacy-flawfinder"]
 CMD []

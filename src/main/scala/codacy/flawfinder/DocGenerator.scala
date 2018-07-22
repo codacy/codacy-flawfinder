@@ -1,10 +1,8 @@
-package codacy.cppcheck
+package codacy.flawfinder
 
 import play.api.libs.json.{JsArray, Json}
 import better.files._
 import better.files
-
-import scala.xml.{Elem, XML}
 
 object DocGenerator {
 
@@ -23,26 +21,12 @@ object DocGenerator {
 
   private def generatePatterns(rules: Seq[Ruleset]): JsArray = {
     val codacyPatterns = rules.map { rule =>
-      val category: String =
-        if (rule.level.startsWith("error") ||
-            rule.level.startsWith("warning") ||
-            rule.level.startsWith("portability")) {
-          "ErrorProne"
-        } else if (rule.level.startsWith("performance")) {
-          "Performance"
-        } else {
-          "CodeStyle"
-        }
+      val category: String = "Security"
 
       val level: String =
-        if (rule.level.startsWith("warning") ||
-            rule.level.startsWith("portability") ||
-            rule.level.startsWith("performance")) {
-          "Warning"
-        } else if(rule.level.startsWith("error")) {
-          "Error"
-        } else {
-          "Info"
+        rule.level match {
+          case "1" => "Warning"
+          case _ => "Info"
         }
 
       Json.obj(
@@ -59,7 +43,7 @@ object DocGenerator {
     val codacyPatternsDescs = rules.map { rule =>
       Json.obj(
         "patternId" -> rule.patternId,
-        "title" -> Json.toJsFieldJsValueWrapper(rule.title),
+        "title" -> Json.toJsFieldJsValueWrapper(s"Finds potential security problems in ${rule.patternId} calls"),
         "description" -> Json.toJsFieldJsValueWrapper(
           truncateText(rule.description, 495)),
         "timeToFix" -> 5
@@ -70,23 +54,19 @@ object DocGenerator {
   }
 
   private def getVersion: String = {
-    val repoRoot: files.File = File(".cppcheckVersion")
+    val repoRoot: files.File = File(".flawfinder-version")
     repoRoot.lines.mkString("")
   }
 
   private def getRules(fileName: String): Seq[Ruleset] = {
-    val outputXML: Elem = XML.loadFile(fileName)
-    (outputXML \\ "errors" \\ "error").map { r =>
-      Ruleset((r \ "@id").text,
-              (r \ "@severity").text,
-              (r \ "@msg").text,
-              (r \ "@verbose").text)
-    }
+    File(fileName).lines.map(_.split('\t')).map { line =>
+      Ruleset(line(0), line(1), line(2), line(2))
+    }.toSeq
   }
 
   private def createPatternsAndDescriptionFile(
-      version: String,
-      rules: Seq[DocGenerator.Ruleset]): Unit = {
+                                                version: String,
+                                                rules: Seq[DocGenerator.Ruleset]): Unit = {
     val repoRoot: files.File = File(".")
     val docsRoot: files.File = File(repoRoot, "src/main/resources/docs")
     val patternsFile: files.File = File(docsRoot, "patterns.json")
@@ -104,11 +84,11 @@ object DocGenerator {
   private def getPatterns(version: String,
                           rules: Seq[DocGenerator.Ruleset]): String = {
     Json.prettyPrint(
-      Json.obj("name" -> "cppcheck",
-               "version" -> version,
-               "patterns" -> Json
-                 .parse(Json.toJson(generatePatterns(rules)).toString)
-                 .as[JsArray]))
+      Json.obj("name" -> "flawfinder",
+        "version" -> version,
+        "patterns" -> Json
+          .parse(Json.toJson(generatePatterns(rules)).toString)
+          .as[JsArray]))
   }
 
   private def getDescriptions(rules: Seq[DocGenerator.Ruleset]): String = {

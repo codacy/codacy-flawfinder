@@ -2,5 +2,5 @@
 
 set -e
 
-TOOL_VERSION="$(cat .cppcheckVersion)"
-docker build --no-cache -t "codacy/codacy-cppcheck-base:latest" -f Dockerfile.base . --build-arg toolVersion=$TOOL_VERSION
+TOOL_VERSION="$(cat .flawfinder-version)"
+docker build -t "codacy/codacy-flawfinder-base:latest" -f Dockerfile.base . --build-arg toolVersion=$TOOL_VERSION

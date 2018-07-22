@@ -1,1361 +1,1096 @@
 [ {
-  "patternId" : "purgedConfiguration",
-  "title" : "The configuration '' was not checked because its code equals another one.",
-  "description" : "The configuration '' was not checked because its code equals another one.",
+  "patternId" : "AddAccessAllowedAce",
+  "title" : "Finds potential security problems in AddAccessAllowedAce calls",
+  "description" : "This doesn't set the inheritance bits in the access control entry (ACE) header (CWE-732)",
   "timeToFix" : 5
 }, {
-  "patternId" : "toomanyconfigs",
-  "title" : "Too many #ifdef configurations - cppcheck only checks 12 configurations. Use --force to check all configurations. For more details, use --enable=information.",
-  "description" : "The checking of the file will be interrupted because there are too many #ifdef configurations. Checking of all #ifdef configurations can be forced by --force command line option or from GUI preferences. However that may increase the checking time. For more details, use --enable=information.",
+  "patternId" : "CoImpersonateClient",
+  "title" : "Finds potential security problems in CoImpersonateClient calls",
+  "description" : "If this call fails, the program could fail to drop heightened privileges (CWE-250)",
   "timeToFix" : 5
 }, {
-  "patternId" : "AssignmentAddressToInteger",
-  "title" : "Assigning a pointer to an integer is not portable.",
-  "description" : "Assigning a pointer to an integer (int/long/etc) is not portable across different platforms and compilers. For example in 32-bit Windows and linux they are same width, but in 64-bit Windows and linux they are of different width. In worst case you end up assigning 64-bit address to 32-bit integer. The safe way is to store addresses only in pointer types (or typedefs like uintptr_t).",
+  "patternId" : "CopyMemory",
+  "title" : "Finds potential security problems in CopyMemory calls",
+  "description" : "Does not check for buffer overflows when copying to destination (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "AssignmentIntegerToAddress",
-  "title" : "Assigning an integer to a pointer is not portable.",
-  "description" : "Assigning an integer (int/long/etc) to a pointer is not portable across different platforms and compilers. For example in 32-bit Windows and linux they are same width, but in 64-bit Windows and linux they are of different width. In worst case you end up assigning 64-bit integer to 32-bit pointer. The safe way is to store addresses only in pointer types (or typedefs like uintptr_t).",
+  "patternId" : "CreateProcess",
+  "title" : "Finds potential security problems in CreateProcess calls",
+  "description" : "This causes a new process to execute and is difficult to use safely (CWE-78)",
   "timeToFix" : 5
 }, {
-  "patternId" : "CastIntegerToAddressAtReturn",
-  "title" : "Returning an integer in a function with pointer return type is not portable.",
-  "description" : "Returning an integer (int/long/etc) in a function with pointer return type is not portable across different platforms and compilers. For example in 32-bit Windows and Linux they are same width, but in 64-bit Windows and Linux they are of different width. In worst case you end up casting 64-bit integer down to 32-bit pointer. The safe way is to always return a pointer.",
+  "patternId" : "CreateProcessAsUser",
+  "title" : "Finds potential security problems in CreateProcessAsUser calls",
+  "description" : "This causes a new process to execute and is difficult to use safely (CWE-78)",
   "timeToFix" : 5
 }, {
-  "patternId" : "CastAddressToIntegerAtReturn",
-  "title" : "Returning an address value in a function with integer return type is not portable.",
-  "description" : "Returning an address value in a function with integer (int/long/etc) return type is not portable across different platforms and compilers. For example in 32-bit Windows and Linux they are same width, but in 64-bit Windows and Linux they are of different width. In worst case you end up casting 64-bit address down to 32-bit integer. The safe way is to always return an integer.",
+  "patternId" : "CreateProcessWithLogon",
+  "title" : "Finds potential security problems in CreateProcessWithLogon calls",
+  "description" : "This causes a new process to execute and is difficult to use safely (CWE-78)",
   "timeToFix" : 5
 }, {
-  "patternId" : "assertWithSideEffect",
-  "title" : "Assert statement calls a function which may have desired side effects: 'function'.",
-  "description" : "Non-pure function: 'function' is called inside assert statement. Assert statements are removed from release builds so the code inside assert statement is not executed. If the code is needed also in release builds, this is a bug.",
+  "patternId" : "EVP_des_cbc",
+  "title" : "Finds potential security problems in EVP_des_cbc calls",
+  "description" : "DES only supports a 56-bit keysize, which is too small given today's computers (CWE-327)",
   "timeToFix" : 5
 }, {
-  "patternId" : "assignmentInAssert",
-  "title" : "Assert statement modifies 'var'.",
-  "description" : "Variable 'var' is modified insert assert statement. Assert statements are removed from release builds so the code inside assert statement is not executed. If the code is needed also in release builds, this is a bug.",
+  "patternId" : "EVP_des_cfb",
+  "title" : "Finds potential security problems in EVP_des_cfb calls",
+  "description" : "DES only supports a 56-bit keysize, which is too small given today's computers (CWE-327)",
   "timeToFix" : 5
 }, {
-  "patternId" : "autoVariables",
-  "title" : "Address of local auto-variable assigned to a function parameter.",
-  "description" : "Dangerous assignment - the function parameter is assigned the address of a local auto-variable. Local auto-variables are reserved from the stack which is freed when the function ends. So the pointer to a local variable is invalid after the function ends.",
+  "patternId" : "EVP_des_ecb",
+  "title" : "Finds potential security problems in EVP_des_ecb calls",
+  "description" : "DES only supports a 56-bit keysize, which is too small given today's computers (CWE-327)",
   "timeToFix" : 5
 }, {
-  "patternId" : "returnAddressOfAutoVariable",
-  "title" : "Address of an auto-variable returned.",
-  "description" : "Address of an auto-variable returned.",
+  "patternId" : "EVP_des_ofb",
+  "title" : "Finds potential security problems in EVP_des_ofb calls",
+  "description" : "DES only supports a 56-bit keysize, which is too small given today's computers (CWE-327)",
   "timeToFix" : 5
 }, {
-  "patternId" : "autoVariablesAssignGlobalPointer",
-  "title" : "Address of local array array is assigned to global pointer pointer and not reassigned before array goes out of scope.",
-  "description" : "Address of local array array is assigned to global pointer pointer and not reassigned before array goes out of scope.",
+  "patternId" : "EVP_desx_cbc",
+  "title" : "Finds potential security problems in EVP_desx_cbc calls",
+  "description" : "DES only supports a 56-bit keysize, which is too small given today's computers (CWE-327)",
   "timeToFix" : 5
 }, {
-  "patternId" : "returnLocalVariable",
-  "title" : "Pointer to local array variable returned.",
-  "description" : "Pointer to local array variable returned.",
+  "patternId" : "EVP_rc2_40_cbc",
+  "title" : "Finds potential security problems in EVP_rc2_40_cbc calls",
+  "description" : "These keysizes are too small given today's computers (CWE-327)",
   "timeToFix" : 5
 }, {
-  "patternId" : "returnReference",
-  "title" : "Reference to auto variable returned.",
-  "description" : "Reference to auto variable returned.",
+  "patternId" : "EVP_rc2_64_cbc",
+  "title" : "Finds potential security problems in EVP_rc2_64_cbc calls",
+  "description" : "These keysizes are too small given today's computers (CWE-327)",
   "timeToFix" : 5
 }, {
-  "patternId" : "returnTempReference",
-  "title" : "Reference to temporary returned.",
-  "description" : "Reference to temporary returned.",
+  "patternId" : "EVP_rc4_40",
+  "title" : "Finds potential security problems in EVP_rc4_40 calls",
+  "description" : "These keysizes are too small given today's computers (CWE-327)",
   "timeToFix" : 5
 }, {
-  "patternId" : "autovarInvalidDeallocation",
-  "title" : "Deallocation of an auto-variable results in undefined behaviour.",
-  "description" : "The deallocation of an auto-variable results in undefined behaviour. You should only free memory that has been allocated dynamically.",
+  "patternId" : "EnterCriticalSection",
+  "title" : "Finds potential security problems in EnterCriticalSection calls",
+  "description" : "On some versions of Windows, exceptions can be thrown in low-memory situations",
   "timeToFix" : 5
 }, {
-  "patternId" : "returnAddressOfFunctionParameter",
-  "title" : "Address of function parameter 'parameter' returned.",
-  "description" : "Address of the function parameter 'parameter' becomes invalid after the function exits because function parameters are stored on the stack which is freed when the function exits. Thus the returned value is invalid.",
+  "patternId" : "GetTempFileName",
+  "title" : "Finds potential security problems in GetTempFileName calls",
+  "description" : "Temporary file race condition in certain cases (e.g., if run as SYSTEM in many versions of Windows) (CWE-377)",
   "timeToFix" : 5
 }, {
-  "patternId" : "uselessAssignmentArg",
-  "title" : "Assignment of function parameter has no effect outside the function.",
-  "description" : "Assignment of function parameter has no effect outside the function.",
+  "patternId" : "ImpersonateDdeClientWindow",
+  "title" : "Finds potential security problems in ImpersonateDdeClientWindow calls",
+  "description" : "If this call fails, the program could fail to drop heightened privileges (CWE-250)",
   "timeToFix" : 5
 }, {
-  "patternId" : "uselessAssignmentPtrArg",
-  "title" : "Assignment of function parameter has no effect outside the function. Did you forget dereferencing it?",
-  "description" : "Assignment of function parameter has no effect outside the function. Did you forget dereferencing it?",
+  "patternId" : "ImpersonateLoggedOnUser",
+  "title" : "Finds potential security problems in ImpersonateLoggedOnUser calls",
+  "description" : "If this call fails, the program could fail to drop heightened privileges (CWE-250)",
   "timeToFix" : 5
 }, {
-  "patternId" : "assignBoolToPointer",
-  "title" : "Boolean value assigned to pointer.",
-  "description" : "Boolean value assigned to pointer.",
+  "patternId" : "ImpersonateNamedPipeClient",
+  "title" : "Finds potential security problems in ImpersonateNamedPipeClient calls",
+  "description" : "If this call fails, the program could fail to drop heightened privileges (CWE-250)",
   "timeToFix" : 5
 }, {
-  "patternId" : "assignBoolToFloat",
-  "title" : "Boolean value assigned to floating point variable.",
-  "description" : "Boolean value assigned to floating point variable.",
+  "patternId" : "ImpersonateSecurityContext",
+  "title" : "Finds potential security problems in ImpersonateSecurityContext calls",
+  "description" : "If this call fails, the program could fail to drop heightened privileges (CWE-250)",
   "timeToFix" : 5
 }, {
-  "patternId" : "comparisonOfFuncReturningBoolError",
-  "title" : "Comparison of a function returning boolean value using relational (<, >, <= or >=) operator.",
-  "description" : "The return type of function 'func_name' is 'bool' and result is of type 'bool'. Comparing 'bool' value using relational (<, >, <= or >=) operator could cause unexpected results.",
+  "patternId" : "InitializeCriticalSection",
+  "title" : "Finds potential security problems in InitializeCriticalSection calls",
+  "description" : "Exceptions can be thrown in low-memory situations",
   "timeToFix" : 5
 }, {
-  "patternId" : "comparisonOfTwoFuncsReturningBoolError",
-  "title" : "Comparison of two functions returning boolean value using relational (<, >, <= or >=) operator.",
-  "description" : "The return type of function 'func_name1' and function 'func_name2' is 'bool' and result is of type 'bool'. Comparing 'bool' value using relational (<, >, <= or >=) operator could cause unexpected results.",
+  "patternId" : "LoadLibrary",
+  "title" : "Finds potential security problems in LoadLibrary calls",
+  "description" : "Ensure that the full path to the library is specified, or current directory may be used (CWE-829, CWE-20)",
   "timeToFix" : 5
 }, {
-  "patternId" : "comparisonOfBoolWithBoolError",
-  "title" : "Comparison of a variable having boolean value using relational (<, >, <= or >=) operator.",
-  "description" : "The variable 'var_name' is of type 'bool' and comparing 'bool' value using relational (<, >, <= or >=) operator could cause unexpected results.",
+  "patternId" : "LoadLibraryEx",
+  "title" : "Finds potential security problems in LoadLibraryEx calls",
+  "description" : "Ensure that the full path to the library is specified, or current directory may be used (CWE-829, CWE-20)",
   "timeToFix" : 5
 }, {
-  "patternId" : "incrementboolean",
-  "title" : "Incrementing a variable of type 'bool' with postfix operator++ is deprecated by the C++ Standard. You should assign it the value 'true' instead.",
-  "description" : "The operand of a postfix increment operator may be of type bool but it is deprecated by C++ Standard (Annex D-1) and the operand is always set to true. You should assign it the value 'true' instead.",
+  "patternId" : "MultiByteToWideChar",
+  "title" : "Finds potential security problems in MultiByteToWideChar calls",
+  "description" : "Requires maximum length in CHARACTERS, not bytes (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "bitwiseOnBoolean",
-  "title" : "Boolean variable 'varname' is used in bitwise operation. Did you mean '&&'?",
-  "description" : "Boolean variable 'varname' is used in bitwise operation. Did you mean '&&'?",
+  "patternId" : "RpcImpersonateClient",
+  "title" : "Finds potential security problems in RpcImpersonateClient calls",
+  "description" : "If this call fails, the program could fail to drop heightened privileges (CWE-250)",
   "timeToFix" : 5
 }, {
-  "patternId" : "compareBoolExpressionWithInt",
-  "title" : "Comparison of a boolean expression with an integer other than 0 or 1.",
-  "description" : "Comparison of a boolean expression with an integer other than 0 or 1.",
+  "patternId" : "SetSecurityDescriptorDacl",
+  "title" : "Finds potential security problems in SetSecurityDescriptorDacl calls",
+  "description" : "Never create NULL ACLs; an attacker can set it to Everyone (Deny All Access), which would even forbid administrator access (CWE-732)",
   "timeToFix" : 5
 }, {
-  "patternId" : "pointerArithBool",
-  "title" : "Converting pointer arithmetic result to bool. The bool is always true unless there is undefined behaviour.",
-  "description" : "Converting pointer arithmetic result to bool. The boolean result is always true unless there is pointer arithmetic overflow, and overflow is undefined behaviour. Probably a dereference is forgotten.",
+  "patternId" : "SetThreadToken",
+  "title" : "Finds potential security problems in SetThreadToken calls",
+  "description" : "If this call fails, the program could fail to drop heightened privileges (CWE-250)",
   "timeToFix" : 5
 }, {
-  "patternId" : "boostForeachError",
-  "title" : "BOOST_FOREACH caches the end() iterator. It's undefined behavior if you modify the container inside.",
-  "description" : "BOOST_FOREACH caches the end() iterator. It's undefined behavior if you modify the container inside.",
+  "patternId" : "ShellExecute",
+  "title" : "Finds potential security problems in ShellExecute calls",
+  "description" : "This causes a new program to execute and is difficult to use safely (CWE-78)",
   "timeToFix" : 5
 }, {
-  "patternId" : "arrayIndexOutOfBounds",
-  "title" : "Array 'array[2]' index array[1][1] out of bounds.",
-  "description" : "Array 'array[2]' index array[1][1] out of bounds.",
+  "patternId" : "StrCat",
+  "title" : "Finds potential security problems in StrCat calls",
+  "description" : "Does not check for buffer overflows when concatenating to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "bufferAccessOutOfBounds",
-  "title" : "Buffer is accessed out of bounds: buffer",
-  "description" : "Buffer is accessed out of bounds: buffer",
+  "patternId" : "StrCatA",
+  "title" : "Finds potential security problems in StrCatA calls",
+  "description" : "Does not check for buffer overflows when concatenating to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "strncatUsage",
-  "title" : "Dangerous usage of strncat - 3rd parameter is the maximum number of characters to append.",
-  "description" : "At most, strncat appends the 3rd parameter's amount of characters and adds a terminating null byte.\\012The safe way to use strncat is to subtract one from the remaining space in the buffer and use it as 3rd parameter.Source: http://www.cplusplus.com/reference/cstring/strncat/\\012Source: http://www.opensource.apple.com/source/Libc/Libc-167/gen.subproj/i386.subproj/strncat.c",
+  "patternId" : "StrCatBuffA",
+  "title" : "Finds potential security problems in StrCatBuffA calls",
+  "description" : "Does not check for buffer overflows when concatenating to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "outOfBounds",
-  "title" : "index is out of bounds: Supplied size 2 is larger than actual size 1.",
-  "description" : "index is out of bounds: Supplied size 2 is larger than actual size 1.",
+  "patternId" : "StrCatBuffW",
+  "title" : "Finds potential security problems in StrCatBuffW calls",
+  "description" : "Does not check for buffer overflows when concatenating to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "sizeArgumentAsChar",
-  "title" : "The size argument is given as a char constant.",
-  "description" : "The size argument is given as a char constant.",
+  "patternId" : "StrCatChainW",
+  "title" : "Finds potential security problems in StrCatChainW calls",
+  "description" : "Does not check for buffer overflows when concatenating to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "terminateStrncpy",
-  "title" : "The buffer 'buffer' may not be null-terminated after the call to strncpy().",
-  "description" : "The buffer 'buffer' may not be null-terminated after the call to strncpy(). If the source string's size fits or exceeds the given size, strncpy() does not add a zero at the end of the buffer. This causes bugs later in the code if the code assumes buffer is null-terminated.",
+  "patternId" : "StrCatN",
+  "title" : "Finds potential security problems in StrCatN calls",
+  "description" : "Does not check for buffer overflows when concatenating to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "bufferNotZeroTerminated",
-  "title" : "The buffer 'buffer' is not null-terminated after the call to strncpy().",
-  "description" : "The buffer 'buffer' is not null-terminated after the call to strncpy(). This will cause bugs later in the code if the code assumes the buffer is null-terminated.",
+  "patternId" : "StrCatNA",
+  "title" : "Finds potential security problems in StrCatNA calls",
+  "description" : "Does not check for buffer overflows when concatenating to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "negativeIndex",
-  "title" : "Array index -1 is out of bounds.",
-  "description" : "Array index -1 is out of bounds.",
+  "patternId" : "StrCatNW",
+  "title" : "Finds potential security problems in StrCatNW calls",
+  "description" : "Does not check for buffer overflows when concatenating to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "insecureCmdLineArgs",
-  "title" : "Buffer overrun possible for long command line arguments.",
-  "description" : "Buffer overrun possible for long command line arguments.",
+  "patternId" : "StrCpy",
+  "title" : "Finds potential security problems in StrCpy calls",
+  "description" : "Does not check for buffer overflows when copying to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "pointerOutOfBounds",
-  "title" : "Undefined behaviour, pointer arithmetic '' is out of bounds.",
-  "description" : "Undefined behaviour, pointer arithmetic '' is out of bounds. From chapter 6.5.6 in the C specification:\\012\"When an expression that has integer type is added to or subtracted from a pointer, ..\" and then \"If both the pointer operand and the result point to elements of the same array object, or one past the last element of the array object, the evaluation shall not produce an overflow; otherwise, the behavior is undefined.\"",
+  "patternId" : "StrCpyA",
+  "title" : "Finds potential security problems in StrCpyA calls",
+  "description" : "Does not check for buffer overflows when copying to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "arrayIndexThenCheck",
-  "title" : "Array index 'index' is used before limits check.",
-  "description" : "Defensive programming: The variable 'index' is used as an array index before it is checked that is within limits. This can mean that the array might be accessed out of bounds. Reorder conditions such as '(a[i] && i < 10)' to '(i < 10 && a[i])'. That way the array will not be accessed if the index is out of limits.",
+  "patternId" : "StrCpyN",
+  "title" : "Finds potential security problems in StrCpyN calls",
+  "description" : "Does not check for buffer overflows when copying to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "possibleBufferAccessOutOfBounds",
-  "title" : "Possible buffer overflow if strlen(source) is larger than or equal to sizeof(destination).",
-  "description" : "Possible buffer overflow if strlen(source) is larger than or equal to sizeof(destination). The source buffer is larger than the destination buffer so there is the potential for overflowing the destination buffer.",
+  "patternId" : "StrCpyNA",
+  "title" : "Finds potential security problems in StrCpyNA calls",
+  "description" : "Does not check for buffer overflows when copying to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "argumentSize",
-  "title" : "The array 'array' is too small, the function 'function' expects a bigger one.",
-  "description" : "The array 'array' is too small, the function 'function' expects a bigger one.",
+  "patternId" : "StrCpyNW",
+  "title" : "Finds potential security problems in StrCpyNW calls",
+  "description" : "Does not check for buffer overflows when copying to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "negativeMemoryAllocationSize",
-  "title" : "Memory allocation size is negative.",
-  "description" : "Memory allocation size is negative.Negative allocation size has no specified behaviour.",
+  "patternId" : "StrNCat",
+  "title" : "Finds potential security problems in StrNCat calls",
+  "description" : "Does not check for buffer overflows when concatenating to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "negativeArraySize",
-  "title" : "Declaration of array '' with negative size is undefined behaviour",
-  "description" : "Declaration of array '' with negative size is undefined behaviour",
+  "patternId" : "StrNCatA",
+  "title" : "Finds potential security problems in StrNCatA calls",
+  "description" : "Does not check for buffer overflows when concatenating to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "arrayIndexOutOfBoundsCond",
-  "title" : "Array 'x[10]' accessed at index 20, which is out of bounds. Otherwise condition 'y==20' is redundant.",
-  "description" : "Array 'x[10]' accessed at index 20, which is out of bounds. Otherwise condition 'y==20' is redundant.",
+  "patternId" : "StrNCatW",
+  "title" : "Finds potential security problems in StrNCatW calls",
+  "description" : "Does not check for buffer overflows when concatenating to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "invalidFunctionArg",
-  "title" : "Invalid func_name() argument nr 1. The value is 0 or 1 (boolean) but the valid values are '1:4'.",
-  "description" : "Invalid func_name() argument nr 1. The value is 0 or 1 (boolean) but the valid values are '1:4'.",
+  "patternId" : "StrNCpy",
+  "title" : "Finds potential security problems in StrNCpy calls",
+  "description" : "Does not check for buffer overflows when copying to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "invalidFunctionArgBool",
-  "title" : "Invalid func_name() argument nr 1. A non-boolean value is required.",
-  "description" : "Invalid func_name() argument nr 1. A non-boolean value is required.",
+  "patternId" : "StrNCpyA",
+  "title" : "Finds potential security problems in StrNCpyA calls",
+  "description" : "Does not check for buffer overflows when copying to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "ignoredReturnValue",
-  "title" : "Return value of function malloc() is not used.",
-  "description" : "Return value of function malloc() is not used.",
+  "patternId" : "StrNCpyW",
+  "title" : "Finds potential security problems in StrNCpyW calls",
+  "description" : "Does not check for buffer overflows when copying to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "wrongmathcall",
-  "title" : "Passing value '#' to #() leads to implementation-defined result.",
-  "description" : "Passing value '#' to #() leads to implementation-defined result.",
+  "patternId" : "StrcatW",
+  "title" : "Finds potential security problems in StrcatW calls",
+  "description" : "Does not check for buffer overflows when concatenating to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "unpreciseMathCall",
-  "title" : "Expression '1 - erf(x)' can be replaced by 'erfc(x)' to avoid loss of precision.",
-  "description" : "Expression '1 - erf(x)' can be replaced by 'erfc(x)' to avoid loss of precision.",
+  "patternId" : "TCHAR",
+  "title" : "Finds potential security problems in TCHAR calls",
+  "description" : "Statically-sized arrays can be improperly restricted, leading to potential overflows or other issues (CWE-119!/CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "memsetZeroBytes",
-  "title" : "memset() called to fill 0 bytes.",
-  "description" : "memset() called to fill 0 bytes. The second and third arguments might be inverted. The function memset ( void * ptr, int value, size_t num ) sets the first num bytes of the block of memory pointed by ptr to the specified value.",
+  "patternId" : "WinExec",
+  "title" : "Finds potential security problems in WinExec calls",
+  "description" : "This causes a new program to execute and is difficult to use safely (CWE-78)",
   "timeToFix" : 5
 }, {
-  "patternId" : "memsetFloat",
-  "title" : "The 2nd memset() argument 'varname' is a float, its representation is implementation defined.",
-  "description" : "The 2nd memset() argument 'varname' is a float, its representation is implementation defined. memset() is used to set each byte of a block of memory to a specific value and the actual representation of a floating-point value is implementation defined.",
+  "patternId" : "_ftcsat",
+  "title" : "Finds potential security problems in _ftcsat calls",
+  "description" : "Does not check for buffer overflows when concatenating to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "memsetValueOutOfRange",
-  "title" : "The 2nd memset() argument 'varname' doesn't fit into an 'unsigned char'.",
-  "description" : "The 2nd memset() argument 'varname' doesn't fit into an 'unsigned char'. The 2nd parameter is passed as an 'int', but the function fills the block of memory using the 'unsigned char' conversion of this value.",
+  "patternId" : "_ftcscpy",
+  "title" : "Finds potential security problems in _ftcscpy calls",
+  "description" : "Does not check for buffer overflows when copying to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "noConstructor",
-  "title" : "The class 'classname' does not have a constructor although it has private member variables.",
-  "description" : "The class 'classname' does not have a constructor although it has private member variables. Member variables of builtin types are left uninitialized when the class is instantiated. That may cause bugs or undefined behavior.",
+  "patternId" : "_ftprintf",
+  "title" : "Finds potential security problems in _ftprintf calls",
+  "description" : "If format strings can be influenced by an attacker, they can be exploited (CWE-134)",
   "timeToFix" : 5
 }, {
-  "patternId" : "noExplicitConstructor",
-  "title" : "Class 'classname' has a constructor with 1 argument that is not explicit.",
-  "description" : "Class 'classname' has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.",
+  "patternId" : "_ftscanf",
+  "title" : "Finds potential security problems in _ftscanf calls",
+  "description" : "The scanf() family's %s operation, without a limit specification, permits buffer overflows (CWE-120, CWE-20)",
   "timeToFix" : 5
 }, {
-  "patternId" : "copyCtorPointerCopying",
-  "title" : "Value of pointer 'var', which points to allocated memory, is copied in copy constructor instead of allocating new memory.",
-  "description" : "Value of pointer 'var', which points to allocated memory, is copied in copy constructor instead of allocating new memory.",
+  "patternId" : "_gettc",
+  "title" : "Finds potential security problems in _gettc calls",
+  "description" : "Check buffer boundaries if used in a loop including recursive loops (CWE-120, CWE-20)",
   "timeToFix" : 5
 }, {
-  "patternId" : "noCopyConstructor",
-  "title" : "Class 'class' does not have a copy constructor which is recommended since it has dynamic memory/resource allocation(s).",
-  "description" : "Class 'class' does not have a copy constructor which is recommended since it has dynamic memory/resource allocation(s).",
+  "patternId" : "_getts",
+  "title" : "Finds potential security problems in _getts calls",
+  "description" : "Does not check for buffer overflows (CWE-120, CWE-20)",
   "timeToFix" : 5
 }, {
-  "patternId" : "noOperatorEq",
-  "title" : "Class 'class' does not have a operator= which is recommended since it has dynamic memory/resource allocation(s).",
-  "description" : "Class 'class' does not have a operator= which is recommended since it has dynamic memory/resource allocation(s).",
+  "patternId" : "_mbccat",
+  "title" : "Finds potential security problems in _mbccat calls",
+  "description" : "Does not check for buffer overflows when concatenating to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "noDestructor",
-  "title" : "Class 'class' does not have a destructor which is recommended since it has dynamic memory/resource allocation(s).",
-  "description" : "Class 'class' does not have a destructor which is recommended since it has dynamic memory/resource allocation(s).",
+  "patternId" : "_mbccpy",
+  "title" : "Finds potential security problems in _mbccpy calls",
+  "description" : "Does not check for buffer overflows when copying to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "uninitMemberVar",
-  "title" : "Member variable 'classname::varname' is not initialized in the constructor.",
-  "description" : "Member variable 'classname::varname' is not initialized in the constructor.",
+  "patternId" : "_mbscat",
+  "title" : "Finds potential security problems in _mbscat calls",
+  "description" : "Does not check for buffer overflows when concatenating to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "operatorEqVarError",
-  "title" : "Member variable 'classname::' is not assigned a value in 'classname::operator='.",
-  "description" : "Member variable 'classname::' is not assigned a value in 'classname::operator='.",
+  "patternId" : "_mbscpy",
+  "title" : "Finds potential security problems in _mbscpy calls",
+  "description" : "Does not check for buffer overflows when copying to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "unusedPrivateFunction",
-  "title" : "Unused private function: 'classname::funcname'",
-  "description" : "Unused private function: 'classname::funcname'",
+  "patternId" : "_mbslen",
+  "title" : "Finds potential security problems in _mbslen calls",
+  "description" : "Does not handle strings that are not \\0-terminated; if given one it may perform an over-read (it could cause a crash if unprotected) (CWE-126)",
   "timeToFix" : 5
 }, {
-  "patternId" : "memsetClass",
-  "title" : "Using 'memfunc' on class that contains a classname.",
-  "description" : "Using 'memfunc' on class that contains a classname is unsafe, because constructor, destructor and copy operator calls are omitted. These are necessary for this non-POD type to ensure that a valid object is created.",
+  "patternId" : "_mbsnbcat",
+  "title" : "Finds potential security problems in _mbsnbcat calls",
+  "description" : "Easily used incorrectly (e.g., incorrectly computing the correct maximum size to add) [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "memsetClassReference",
-  "title" : "Using 'memfunc' on class that contains a reference.",
-  "description" : "Using 'memfunc' on class that contains a reference.",
+  "patternId" : "_mbsnbcpy",
+  "title" : "Finds potential security problems in _mbsnbcpy calls",
+  "description" : "Easily used incorrectly; doesn't always \\0-terminate or check for invalid pointers [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "memsetClassFloat",
-  "title" : "Using memset() on class which contains a floating point number.",
-  "description" : "Using memset() on class which contains a floating point number. This is not portable because memset() sets each byte of a block of memory to a specific value and the actual representation of a floating-point value is implementation defined. Note: In case of an IEEE754-1985 compatible implementation setting all bits to zero results in the value 0.0.",
+  "patternId" : "_mbsncpy",
+  "title" : "Finds potential security problems in _mbsncpy calls",
+  "description" : "Does not check for buffer overflows when copying to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "mallocOnClassWarning",
-  "title" : "Memory for class instance allocated with malloc(), but class provides constructors.",
-  "description" : "Memory for class instance allocated with malloc(), but class provides constructors. This is unsafe, since no constructor is called and class members remain uninitialized. Consider using 'new' instead.",
+  "patternId" : "_snprintf",
+  "title" : "Finds potential security problems in _snprintf calls",
+  "description" : "If format strings can be influenced by an attacker, they can be exploited, and note that sprintf variations do not always \\0-terminate (CWE-134)",
   "timeToFix" : 5
 }, {
-  "patternId" : "mallocOnClassError",
-  "title" : "Memory for class instance allocated with malloc(), but class contains a std::string.",
-  "description" : "Memory for class instance allocated with malloc(), but class a std::string. This is unsafe, since no constructor is called and class members remain uninitialized. Consider using 'new' instead.",
+  "patternId" : "_sntprintf",
+  "title" : "Finds potential security problems in _sntprintf calls",
+  "description" : "If format strings can be influenced by an attacker, they can be exploited, and note that sprintf variations do not always \\0-terminate (CWE-134)",
   "timeToFix" : 5
 }, {
-  "patternId" : "operatorEq",
-  "title" : "'class::operator=' should return 'class &'.",
-  "description" : "The class::operator= does not conform to standard C/C++ behaviour. To conform to standard C/C++ behaviour, return a reference to self (such as: 'class &class::operator=(..) { .. return *this; }'. For safety reasons it might be better to not fix this message. If you think that safety is always more important than conformance then please ignore/suppress this message. For more details about this topic, see the book \"Effective C++\" by Scott Meyers.",
+  "patternId" : "_stprintf",
+  "title" : "Finds potential security problems in _stprintf calls",
+  "description" : "Does not check for buffer overflows (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "virtualDestructor",
-  "title" : "Class 'Base' which is inherited by class 'Derived' does not have a virtual destructor.",
-  "description" : "Class 'Base' which is inherited by class 'Derived' does not have a virtual destructor. If you destroy instances of the derived class by deleting a pointer that points to the base class, only the destructor of the base class is executed. Thus, dynamic memory that is managed by the derived class could leak. This can be avoided by adding a virtual destructor to the base class.",
+  "patternId" : "_tccat",
+  "title" : "Finds potential security problems in _tccat calls",
+  "description" : "Does not check for buffer overflows when concatenating to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "thisSubtraction",
-  "title" : "Suspicious pointer subtraction. Did you intend to write '->'?",
-  "description" : "Suspicious pointer subtraction. Did you intend to write '->'?",
+  "patternId" : "_tccpy",
+  "title" : "Finds potential security problems in _tccpy calls",
+  "description" : "Does not check for buffer overflows when copying to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "operatorEqRetRefThis",
-  "title" : "'operator=' should return reference to 'this' instance.",
-  "description" : "'operator=' should return reference to 'this' instance.",
+  "patternId" : "_tcscat",
+  "title" : "Finds potential security problems in _tcscat calls",
+  "description" : "Does not check for buffer overflows when concatenating to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "operatorEqMissingReturnStatement",
-  "title" : "No 'return' statement in non-void function causes undefined behavior.",
-  "description" : "No 'return' statement in non-void function causes undefined behavior.",
+  "patternId" : "_tcscpy",
+  "title" : "Finds potential security problems in _tcscpy calls",
+  "description" : "Does not check for buffer overflows when copying to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "operatorEqShouldBeLeftUnimplemented",
-  "title" : "'operator=' should either return reference to 'this' instance or be declared private and left unimplemented.",
-  "description" : "'operator=' should either return reference to 'this' instance or be declared private and left unimplemented.",
+  "patternId" : "_tcslen",
+  "title" : "Finds potential security problems in _tcslen calls",
+  "description" : "Does not handle strings that are not \\0-terminated; if given one it may perform an over-read (it could cause a crash if unprotected) (CWE-126)",
   "timeToFix" : 5
 }, {
-  "patternId" : "operatorEqToSelf",
-  "title" : "'operator=' should check for assignment to self to avoid problems with dynamic memory.",
-  "description" : "'operator=' should check for assignment to self to ensure that each block of dynamically allocated memory is owned and managed by only one instance of the class.",
+  "patternId" : "_tcsncat",
+  "title" : "Finds potential security problems in _tcsncat calls",
+  "description" : "Easily used incorrectly (e.g., incorrectly computing the correct maximum size to add) [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "functionConst",
-  "title" : "Technically the member function 'class::function' can be const.",
-  "description" : "The member function 'class::function' can be made a const function. Making this function 'const' should not cause compiler errors. Even though the function can be made const function technically it may not make sense conceptually. Think about your design and the task of the function first - is it a function that must not change object internal state?",
+  "patternId" : "_tcsncpy",
+  "title" : "Finds potential security problems in _tcsncpy calls",
+  "description" : "Easily used incorrectly; doesn't always \\0-terminate or check for invalid pointers [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "functionStatic",
-  "title" : "Technically the member function 'class::function' can be static.",
-  "description" : "The member function 'class::function' can be made a static function. Making a function static can bring a performance benefit since no 'this' instance is passed to the function. This change should not cause compiler errors but it does not necessarily make sense conceptually. Think about your design and the task of the function first - is it a function that must not access members of class instances?",
+  "patternId" : "_tscanf",
+  "title" : "Finds potential security problems in _tscanf calls",
+  "description" : "The scanf() family's %s operation, without a limit specification, permits buffer overflows (CWE-120, CWE-20)",
   "timeToFix" : 5
 }, {
-  "patternId" : "initializerList",
-  "title" : "Member variable 'class::variable' is in the wrong place in the initializer list.",
-  "description" : "Member variable 'class::variable' is in the wrong place in the initializer list. Members are initialized in the order they are declared, not in the order they are in the initializer list.  Keeping the initializer list in the same order that the members were declared prevents order dependent initialization errors.",
+  "patternId" : "_vftprintf",
+  "title" : "Finds potential security problems in _vftprintf calls",
+  "description" : "If format strings can be influenced by an attacker, they can be exploited (CWE-134)",
   "timeToFix" : 5
 }, {
-  "patternId" : "useInitializationList",
-  "title" : "Variable 'variable' is assigned in constructor body. Consider performing initialization in initialization list.",
-  "description" : "When an object of a class is created, the constructors of all member variables are called consecutively in the order the variables are declared, even if you don't explicitly write them to the initialization list. You could avoid assigning 'variable' a value by passing the value to the constructor in the initialization list.",
+  "patternId" : "_vsntprintf",
+  "title" : "Finds potential security problems in _vsntprintf calls",
+  "description" : "If format strings can be influenced by an attacker, they can be exploited, and note that sprintf variations do not always \\0-terminate (CWE-134)",
   "timeToFix" : 5
 }, {
-  "patternId" : "selfInitialization",
-  "title" : "Member variable 'var' is initialized by itself.",
-  "description" : "Member variable 'var' is initialized by itself.",
+  "patternId" : "_vstprintf",
+  "title" : "Finds potential security problems in _vstprintf calls",
+  "description" : "Does not check for buffer overflows (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "duplInheritedMember",
-  "title" : "The class 'class' defines member variable with name 'variable' also defined in its parent class 'class'.",
-  "description" : "The class 'class' defines member variable with name 'variable' also defined in its parent class 'class'.",
+  "patternId" : "_vtprintf",
+  "title" : "Finds potential security problems in _vtprintf calls",
+  "description" : "If format strings can be influenced by an attacker, they can be exploited (CWE-134)",
   "timeToFix" : 5
 }, {
-  "patternId" : "copyCtorAndEqOperator",
-  "title" : "The class 'class' has 'operator=' but lack of 'copy constructor'.",
-  "description" : "The class 'class' has 'operator=' but lack of 'copy constructor'.",
+  "patternId" : "_wtoi",
+  "title" : "Finds potential security problems in _wtoi calls",
+  "description" : "Unless checked, the resulting number can exceed the expected range (CWE-190)",
   "timeToFix" : 5
 }, {
-  "patternId" : "unsafeClassDivZero",
-  "title" : "Public interface of Class is not safe. When calling Class::dostuff(), if parameter x is 0 that leads to division by zero.",
-  "description" : "Public interface of Class is not safe. When calling Class::dostuff(), if parameter x is 0 that leads to division by zero.",
+  "patternId" : "_wtoi64",
+  "title" : "Finds potential security problems in _wtoi64 calls",
+  "description" : "Unless checked, the resulting number can exceed the expected range (CWE-190)",
   "timeToFix" : 5
 }, {
-  "patternId" : "pureVirtualCall",
-  "title" : "Call of pure virtual function 'f' in constructor.",
-  "description" : "Call of pure virtual function 'f' in constructor. The call will fail during runtime.",
+  "patternId" : "access",
+  "title" : "Finds potential security problems in access calls",
+  "description" : "This usually indicates a security flaw.  If an attacker can change anything along the path between the call to access() and the file's actual use (e.g., by moving files), the attacker can exploit the race condition (CWE-362/CWE-367!)",
   "timeToFix" : 5
 }, {
-  "patternId" : "virtualCallInConstructor",
-  "title" : "Virtual function 'f' is called from constructor '' at line 1.",
-  "description" : "Call of pure virtual function 'f' in constructor. Dynamic binding is not used.",
+  "patternId" : "atoi",
+  "title" : "Finds potential security problems in atoi calls",
+  "description" : "Unless checked, the resulting number can exceed the expected range (CWE-190)",
   "timeToFix" : 5
 }, {
-  "patternId" : "missingOverride",
-  "title" : "The function '' overrides a function in a base class but is not marked with a 'override' specifier.",
-  "description" : "The function '' overrides a function in a base class but is not marked with a 'override' specifier.",
+  "patternId" : "atol",
+  "title" : "Finds potential security problems in atol calls",
+  "description" : "Unless checked, the resulting number can exceed the expected range (CWE-190)",
   "timeToFix" : 5
 }, {
-  "patternId" : "assignIfError",
-  "title" : "Mismatching assignment and comparison, comparison '' is always false.",
-  "description" : "Mismatching assignment and comparison, comparison '' is always false.",
+  "patternId" : "bcopy",
+  "title" : "Finds potential security problems in bcopy calls",
+  "description" : "Does not check for buffer overflows when copying to destination (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "badBitmaskCheck",
-  "title" : "Result of operator '|' is always true if one operand is non-zero. Did you intend to use '&'?",
-  "description" : "Result of operator '|' is always true if one operand is non-zero. Did you intend to use '&'?",
+  "patternId" : "char",
+  "title" : "Finds potential security problems in char calls",
+  "description" : "Statically-sized arrays can be improperly restricted, leading to potential overflows or other issues (CWE-119!/CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "comparisonError",
-  "title" : "Expression '(X & 0x6) == 0x1' is always false.",
-  "description" : "The expression '(X & 0x6) == 0x1' is always false. Check carefully constants and operators used, these errors might be hard to spot sometimes. In case of complex expression it might help to split it to separate expressions.",
+  "patternId" : "chgrp",
+  "title" : "Finds potential security problems in chgrp calls",
+  "description" : "This accepts filename arguments; if an attacker can move those files, a race condition results. (CWE-362)",
   "timeToFix" : 5
 }, {
-  "patternId" : "multiCondition",
-  "title" : "Expression is always false because 'else if' condition matches previous condition at line 1.",
-  "description" : "Expression is always false because 'else if' condition matches previous condition at line 1.",
+  "patternId" : "chmod",
+  "title" : "Finds potential security problems in chmod calls",
+  "description" : "This accepts filename arguments; if an attacker can move those files, a race condition results. (CWE-362)",
   "timeToFix" : 5
 }, {
-  "patternId" : "mismatchingBitAnd",
-  "title" : "Mismatching bitmasks. Result is always 0 (X = Y & 0xf0; Z = X & 0x1; => Z=0).",
-  "description" : "Mismatching bitmasks. Result is always 0 (X = Y & 0xf0; Z = X & 0x1; => Z=0).",
+  "patternId" : "chown",
+  "title" : "Finds potential security problems in chown calls",
+  "description" : "This accepts filename arguments; if an attacker can move those files, a race condition results. (CWE-362)",
   "timeToFix" : 5
 }, {
-  "patternId" : "oppositeInnerCondition",
-  "title" : "Opposite inner 'if' condition leads to a dead code block.",
-  "description" : "Opposite inner 'if' condition leads to a dead code block (outer condition is 'x' and inner condition is '!x').",
+  "patternId" : "chroot",
+  "title" : "Finds potential security problems in chroot calls",
+  "description" : "chroot can be very helpful, but is hard to use correctly (CWE-250, CWE-22)",
   "timeToFix" : 5
 }, {
-  "patternId" : "identicalInnerCondition",
-  "title" : "Identical inner 'if' condition is always true.",
-  "description" : "Identical inner 'if' condition is always true (outer condition is 'x' and inner condition is 'x').",
+  "patternId" : "crypt",
+  "title" : "Finds potential security problems in crypt calls",
+  "description" : "Function crypt is a poor one-way hashing algorithm; since it only accepts passwords of 8 characters or less, and only a two-byte salt, it is excessively vulnerable to dictionary attacks given today's faster computing equipment (CWE-327)",
   "timeToFix" : 5
 }, {
-  "patternId" : "identicalConditionAfterEarlyExit",
-  "title" : "Identical condition 'x', second condition is always false",
-  "description" : "Identical condition 'x', second condition is always false",
+  "patternId" : "curl_getenv",
+  "title" : "Finds potential security problems in curl_getenv calls",
+  "description" : "Environment variables are untrustable input if they can be set by an attacker.  They can have any content and length, and the same variable can be set more than once (CWE-807, CWE-20)",
   "timeToFix" : 5
 }, {
-  "patternId" : "incorrectLogicOperator",
-  "title" : "Logical disjunction always evaluates to true: foo > 3 && foo < 4.",
-  "description" : "Logical disjunction always evaluates to true: foo > 3 && foo < 4. Are these conditions necessary? Did you intend to use && instead? Are the numbers correct? Are you comparing the correct variables?",
+  "patternId" : "cuserid",
+  "title" : "Finds potential security problems in cuserid calls",
+  "description" : "Exactly what cuserid() does is poorly defined (e.g., some systems use the effective uid, like Linux, while others like System V use the real uid). Thus, you can't trust what it does. It's certainly not portable (The cuserid function was included in the 1988 version of POSIX, but removed from the 1990 version).  Also, if passed a non-null parameter, there's a risk of a buffer overflow if the passed-in buffer is not at least L_cuserid characters long (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "redundantCondition",
-  "title" : "Redundant condition: If x > 11 the condition x > 10 is always true.",
-  "description" : "Redundant condition: If x > 11 the condition x > 10 is always true.",
+  "patternId" : "drand48",
+  "title" : "Finds potential security problems in drand48 calls",
+  "description" : "This function is not sufficiently random for security-related functions such as key and nonce creation (CWE-327)",
   "timeToFix" : 5
 }, {
-  "patternId" : "moduloAlwaysTrueFalse",
-  "title" : "Comparison of modulo result is predetermined, because it is always less than 1.",
-  "description" : "Comparison of modulo result is predetermined, because it is always less than 1.",
+  "patternId" : "erand48",
+  "title" : "Finds potential security problems in erand48 calls",
+  "description" : "This function is not sufficiently random for security-related functions such as key and nonce creation (CWE-327)",
   "timeToFix" : 5
 }, {
-  "patternId" : "clarifyCondition",
-  "title" : "Suspicious condition (assignment + comparison); Clarify expression with parentheses.",
-  "description" : "Suspicious condition (assignment + comparison); Clarify expression with parentheses.",
+  "patternId" : "execl",
+  "title" : "Finds potential security problems in execl calls",
+  "description" : "This causes a new program to execute and is difficult to use safely (CWE-78)",
   "timeToFix" : 5
 }, {
-  "patternId" : "knownConditionTrueFalse",
-  "title" : "Condition 'x' is always false",
-  "description" : "Condition 'x' is always false",
+  "patternId" : "execle",
+  "title" : "Finds potential security problems in execle calls",
+  "description" : "This causes a new program to execute and is difficult to use safely (CWE-78)",
   "timeToFix" : 5
 }, {
-  "patternId" : "invalidTestForOverflow",
-  "title" : "Invalid test for overflow 'x + u < x'. Condition is always false unless there is overflow, and overflow is undefined behaviour.",
-  "description" : "Invalid test for overflow 'x + u < x'. Condition is always false unless there is overflow, and overflow is undefined behaviour.",
+  "patternId" : "execlp",
+  "title" : "Finds potential security problems in execlp calls",
+  "description" : "This causes a new program to execute and is difficult to use safely (CWE-78)",
   "timeToFix" : 5
 }, {
-  "patternId" : "pointerAdditionResultNotNull",
-  "title" : "Comparison is wrong. Result of 'ptr+1' can't be 0 unless there is pointer overflow, and pointer overflow is undefined behaviour.",
-  "description" : "Comparison is wrong. Result of 'ptr+1' can't be 0 unless there is pointer overflow, and pointer overflow is undefined behaviour.",
+  "patternId" : "execv",
+  "title" : "Finds potential security problems in execv calls",
+  "description" : "This causes a new program to execute and is difficult to use safely (CWE-78)",
   "timeToFix" : 5
 }, {
-  "patternId" : "exceptThrowInDestructor",
-  "title" : "Class Class is not safe, destructor throws exception",
-  "description" : "The class Class is not safe because its destructor throws an exception. If Class is used and an exception is thrown that is caught in an outer scope the program will terminate.",
+  "patternId" : "execvp",
+  "title" : "Finds potential security problems in execvp calls",
+  "description" : "This causes a new program to execute and is difficult to use safely (CWE-78)",
   "timeToFix" : 5
 }, {
-  "patternId" : "exceptDeallocThrow",
-  "title" : "Exception thrown in invalid state, 'p' points at deallocated memory.",
-  "description" : "Exception thrown in invalid state, 'p' points at deallocated memory.",
+  "patternId" : "fgetc",
+  "title" : "Finds potential security problems in fgetc calls",
+  "description" : "Check buffer boundaries if used in a loop including recursive loops (CWE-120, CWE-20)",
   "timeToFix" : 5
 }, {
-  "patternId" : "exceptRethrowCopy",
-  "title" : "Throwing a copy of the caught exception instead of rethrowing the original exception.",
-  "description" : "Rethrowing an exception with 'throw varname;' creates an unnecessary copy of 'varname'. To rethrow the caught exception without unnecessary copying or slicing, use a bare 'throw;'.",
+  "patternId" : "fopen",
+  "title" : "Finds potential security problems in fopen calls",
+  "description" : "Check when opening files - can an attacker redirect it (via symlinks), force the opening of special file type (e.g., device files), move things around to create a race condition, control its ancestors, or change its contents? (CWE-362)",
   "timeToFix" : 5
 }, {
-  "patternId" : "catchExceptionByValue",
-  "title" : "Exception should be caught by reference.",
-  "description" : "The exception is caught by value. It could be caught as a (const) reference which is usually recommended in C++.",
+  "patternId" : "fprintf",
+  "title" : "Finds potential security problems in fprintf calls",
+  "description" : "If format strings can be influenced by an attacker, they can be exploited (CWE-134)",
   "timeToFix" : 5
 }, {
-  "patternId" : "throwInNoexceptFunction",
-  "title" : "Exception thrown in function declared not to throw exceptions.",
-  "description" : "Exception thrown in function declared not to throw exceptions.",
+  "patternId" : "fread",
+  "title" : "Finds potential security problems in fread calls",
+  "description" : "Function accepts input from outside program (CWE-20)",
   "timeToFix" : 5
 }, {
-  "patternId" : "unhandledExceptionSpecification",
-  "title" : "Unhandled exception specification when calling function foo().",
-  "description" : "Unhandled exception specification when calling function foo(). Either use a try/catch around the function call, or add a exception specification for funcname() also.",
+  "patternId" : "fscanf",
+  "title" : "Finds potential security problems in fscanf calls",
+  "description" : "The scanf() family's %s operation, without a limit specification, permits buffer overflows (CWE-120, CWE-20)",
   "timeToFix" : 5
 }, {
-  "patternId" : "coutCerrMisusage",
-  "title" : "Invalid usage of output stream: '<< std::cout'.",
-  "description" : "Invalid usage of output stream: '<< std::cout'.",
+  "patternId" : "fvwprintf",
+  "title" : "Finds potential security problems in fvwprintf calls",
+  "description" : "If format strings can be influenced by an attacker, they can be exploited (CWE-134)",
   "timeToFix" : 5
 }, {
-  "patternId" : "fflushOnInputStream",
-  "title" : "fflush() called on input stream 'stdin' may result in undefined behaviour on non-linux systems.",
-  "description" : "fflush() called on input stream 'stdin' may result in undefined behaviour on non-linux systems.",
+  "patternId" : "fwprintf",
+  "title" : "Finds potential security problems in fwprintf calls",
+  "description" : "If format strings can be influenced by an attacker, they can be exploited (CWE-134)",
   "timeToFix" : 5
 }, {
-  "patternId" : "IOWithoutPositioning",
-  "title" : "Read and write operations without a call to a positioning function (fseek, fsetpos or rewind) or fflush in between result in undefined behaviour.",
-  "description" : "Read and write operations without a call to a positioning function (fseek, fsetpos or rewind) or fflush in between result in undefined behaviour.",
+  "patternId" : "fwscanf",
+  "title" : "Finds potential security problems in fwscanf calls",
+  "description" : "The scanf() family's %s operation, without a limit specification, permits buffer overflows (CWE-120, CWE-20)",
   "timeToFix" : 5
 }, {
-  "patternId" : "readWriteOnlyFile",
-  "title" : "Read operation on a file that was opened only for writing.",
-  "description" : "Read operation on a file that was opened only for writing.",
+  "patternId" : "g_get_home_dir",
+  "title" : "Finds potential security problems in g_get_home_dir calls",
+  "description" : "This function is synonymous with 'getenv(\"HOME\")';it returns untrustable input if the environment can beset by an attacker.  It can have any content and length, and the same variable can be set more than once (CWE-807, CWE-20)",
   "timeToFix" : 5
 }, {
-  "patternId" : "writeReadOnlyFile",
-  "title" : "Write operation on a file that was opened only for reading.",
-  "description" : "Write operation on a file that was opened only for reading.",
+  "patternId" : "g_get_tmp_dir",
+  "title" : "Finds potential security problems in g_get_tmp_dir calls",
+  "description" : "This function is synonymous with 'getenv(\"TMP\")';it returns untrustable input if the environment can beset by an attacker.  It can have any content and length, and the same variable can be set more than once (CWE-807, CWE-20)",
   "timeToFix" : 5
 }, {
-  "patternId" : "useClosedFile",
-  "title" : "Used file that is not opened.",
-  "description" : "Used file that is not opened.",
+  "patternId" : "g_rand_boolean",
+  "title" : "Finds potential security problems in g_rand_boolean calls",
+  "description" : "This function is not sufficiently random for security-related functions such as key and nonce creation (CWE-327)",
   "timeToFix" : 5
 }, {
-  "patternId" : "seekOnAppendedFile",
-  "title" : "Repositioning operation performed on a file opened in append mode has no effect.",
-  "description" : "Repositioning operation performed on a file opened in append mode has no effect.",
+  "patternId" : "g_rand_double",
+  "title" : "Finds potential security problems in g_rand_double calls",
+  "description" : "This function is not sufficiently random for security-related functions such as key and nonce creation (CWE-327)",
   "timeToFix" : 5
 }, {
-  "patternId" : "invalidscanf",
-  "title" : "scanf() without field width limits can crash with huge input data.",
-  "description" : "scanf() without field width limits can crash with huge input data. Add a field width specifier to fix this problem.\\012\\012Sample program that can crash:\\012\\012#include <stdio.h>\\012int main()\\012{\\012    char c[5];\\012    scanf(\"%s\", c);\\012    return 0;\\012}\\012\\012Typing in 5 or more characters may make the program crash. The correct usage here is 'scanf(\"%4s\", c);', as the maximum field width does not include the terminating null byte.\\012Source: http://linux.die.",
+  "patternId" : "g_rand_double_range",
+  "title" : "Finds potential security problems in g_rand_double_range calls",
+  "description" : "This function is not sufficiently random for security-related functions such as key and nonce creation (CWE-327)",
   "timeToFix" : 5
 }, {
-  "patternId" : "wrongPrintfScanfArgNum",
-  "title" : "printf format string requires 3 parameters but only 2 are given.",
-  "description" : "printf format string requires 3 parameters but only 2 are given.",
+  "patternId" : "g_rand_int",
+  "title" : "Finds potential security problems in g_rand_int calls",
+  "description" : "This function is not sufficiently random for security-related functions such as key and nonce creation (CWE-327)",
   "timeToFix" : 5
 }, {
-  "patternId" : "invalidScanfArgType_s",
-  "title" : "%s in format string (no. 1) requires a 'char *' but the argument type is Unknown.",
-  "description" : "%s in format string (no. 1) requires a 'char *' but the argument type is Unknown.",
+  "patternId" : "g_rand_int_range",
+  "title" : "Finds potential security problems in g_rand_int_range calls",
+  "description" : "This function is not sufficiently random for security-related functions such as key and nonce creation (CWE-327)",
   "timeToFix" : 5
 }, {
-  "patternId" : "invalidScanfArgType_int",
-  "title" : "%d in format string (no. 1) requires 'int *' but the argument type is Unknown.",
-  "description" : "%d in format string (no. 1) requires 'int *' but the argument type is Unknown.",
+  "patternId" : "g_random_boolean",
+  "title" : "Finds potential security problems in g_random_boolean calls",
+  "description" : "This function is not sufficiently random for security-related functions such as key and nonce creation (CWE-327)",
   "timeToFix" : 5
 }, {
-  "patternId" : "invalidScanfArgType_float",
-  "title" : "%f in format string (no. 1) requires 'float *' but the argument type is Unknown.",
-  "description" : "%f in format string (no. 1) requires 'float *' but the argument type is Unknown.",
+  "patternId" : "g_random_double",
+  "title" : "Finds potential security problems in g_random_double calls",
+  "description" : "This function is not sufficiently random for security-related functions such as key and nonce creation (CWE-327)",
   "timeToFix" : 5
 }, {
-  "patternId" : "invalidPrintfArgType_s",
-  "title" : "%s in format string (no. 1) requires 'char *' but the argument type is Unknown.",
-  "description" : "%s in format string (no. 1) requires 'char *' but the argument type is Unknown.",
+  "patternId" : "g_random_double_range",
+  "title" : "Finds potential security problems in g_random_double_range calls",
+  "description" : "This function is not sufficiently random for security-related functions such as key and nonce creation (CWE-327)",
   "timeToFix" : 5
 }, {
-  "patternId" : "invalidPrintfArgType_n",
-  "title" : "%n in format string (no. 1) requires 'int *' but the argument type is Unknown.",
-  "description" : "%n in format string (no. 1) requires 'int *' but the argument type is Unknown.",
+  "patternId" : "g_random_int",
+  "title" : "Finds potential security problems in g_random_int calls",
+  "description" : "This function is not sufficiently random for security-related functions such as key and nonce creation (CWE-327)",
   "timeToFix" : 5
 }, {
-  "patternId" : "invalidPrintfArgType_p",
-  "title" : "%p in format string (no. 1) requires an address but the argument type is Unknown.",
-  "description" : "%p in format string (no. 1) requires an address but the argument type is Unknown.",
+  "patternId" : "g_random_int_range",
+  "title" : "Finds potential security problems in g_random_int_range calls",
+  "description" : "This function is not sufficiently random for security-related functions such as key and nonce creation (CWE-327)",
   "timeToFix" : 5
 }, {
-  "patternId" : "invalidPrintfArgType_uint",
-  "title" : "%u in format string (no. 1) requires 'unsigned int' but the argument type is Unknown.",
-  "description" : "%u in format string (no. 1) requires 'unsigned int' but the argument type is Unknown.",
+  "patternId" : "getc",
+  "title" : "Finds potential security problems in getc calls",
+  "description" : "Check buffer boundaries if used in a loop including recursive loops (CWE-120, CWE-20)",
   "timeToFix" : 5
 }, {
-  "patternId" : "invalidPrintfArgType_sint",
-  "title" : "%i in format string (no. 1) requires 'int' but the argument type is Unknown.",
-  "description" : "%i in format string (no. 1) requires 'int' but the argument type is Unknown.",
+  "patternId" : "getchar",
+  "title" : "Finds potential security problems in getchar calls",
+  "description" : "Check buffer boundaries if used in a loop including recursive loops (CWE-120, CWE-20)",
   "timeToFix" : 5
 }, {
-  "patternId" : "invalidPrintfArgType_float",
-  "title" : "%f in format string (no. 1) requires 'double' but the argument type is Unknown.",
-  "description" : "%f in format string (no. 1) requires 'double' but the argument type is Unknown.",
+  "patternId" : "getenv",
+  "title" : "Finds potential security problems in getenv calls",
+  "description" : "Environment variables are untrustable input if they can be set by an attacker.  They can have any content and length, and the same variable can be set more than once (CWE-807, CWE-20)",
   "timeToFix" : 5
 }, {
-  "patternId" : "invalidLengthModifierError",
-  "title" : "'I' in format string (no. 1) is a length modifier and cannot be used without a conversion specifier.",
-  "description" : "'I' in format string (no. 1) is a length modifier and cannot be used without a conversion specifier.",
+  "patternId" : "getlogin",
+  "title" : "Finds potential security problems in getlogin calls",
+  "description" : "It's often easy to fool getlogin.  Sometimes it does not work at all, because some program messed up the utmp file.  Often, it gives only the first 8 characters of the login name. The user currently logged in on the controlling tty of our program need not be the user who started it.  Avoid getlogin() for security-related purposes (CWE-807)",
   "timeToFix" : 5
 }, {
-  "patternId" : "invalidScanfFormatWidth",
-  "title" : "Width 5 given in format string (no. 10) is larger than destination buffer '[0]', use %-1s to prevent overflowing it.",
-  "description" : "Width 5 given in format string (no. 10) is larger than destination buffer '[0]', use %-1s to prevent overflowing it.",
+  "patternId" : "getopt",
+  "title" : "Finds potential security problems in getopt calls",
+  "description" : "Some older implementations do not protect against internal buffer overflows (CWE-120, CWE-20)",
   "timeToFix" : 5
 }, {
-  "patternId" : "wrongPrintfScanfParameterPositionError",
-  "title" : "printf: referencing parameter 2 while 1 arguments given",
-  "description" : "printf: referencing parameter 2 while 1 arguments given",
+  "patternId" : "getopt_long",
+  "title" : "Finds potential security problems in getopt_long calls",
+  "description" : "Some older implementations do not protect against internal buffer overflows (CWE-120, CWE-20)",
   "timeToFix" : 5
 }, {
-  "patternId" : "deallocret",
-  "title" : "Returning/dereferencing 'p' after it is deallocated / released",
-  "description" : "Returning/dereferencing 'p' after it is deallocated / released",
+  "patternId" : "getpass",
+  "title" : "Finds potential security problems in getpass calls",
+  "description" : "This function is obsolete and not portable. It was in SUSv2 but removed by POSIX.2.  What it does exactly varies considerably between systems, particularly in where its prompt is displayed and where it gets its data (e.g., /dev/tty, stdin, stderr, etc.). In addition, some implementations overflow buffers. (CWE-676, CWE-120, CWE-20)",
   "timeToFix" : 5
 }, {
-  "patternId" : "doubleFree",
-  "title" : "Memory pointed to by 'varname' is freed twice.",
-  "description" : "Memory pointed to by 'varname' is freed twice.",
+  "patternId" : "getpw",
+  "title" : "Finds potential security problems in getpw calls",
+  "description" : "This function is dangerous; it may overflow the provided buffer. It extracts data from a 'protected' area, but most systems have many commands to let users modify the protected area, and it's not always clear what their limits are.  Best to avoid using this function altogether (CWE-676, CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "leakNoVarFunctionCall",
-  "title" : "Allocation with funcName, funcName doesn't release it.",
-  "description" : "Allocation with funcName, funcName doesn't release it.",
+  "patternId" : "gets",
+  "title" : "Finds potential security problems in gets calls",
+  "description" : "Does not check for buffer overflows (CWE-120, CWE-20)",
   "timeToFix" : 5
 }, {
-  "patternId" : "leakReturnValNotUsed",
-  "title" : "Return value of allocation function 'funcName' is not stored.",
-  "description" : "Return value of allocation function 'funcName' is not stored.",
+  "patternId" : "getwd",
+  "title" : "Finds potential security problems in getwd calls",
+  "description" : "This does not protect against buffer overflows by itself, so use with caution (CWE-120, CWE-20)",
   "timeToFix" : 5
 }, {
-  "patternId" : "leakUnsafeArgAlloc",
-  "title" : "Unsafe allocation. If funcName() throws, memory could be leaked. Use make_shared<int>() instead.",
-  "description" : "Unsafe allocation. If funcName() throws, memory could be leaked. Use make_shared<int>() instead.",
+  "patternId" : "gsignal",
+  "title" : "Finds potential security problems in gsignal calls",
+  "description" : "These functions are considered obsolete on most systems, and very non-poertable (Linux-based systems handle them radically different, basically if gsignal/ssignal were the same as raise/signal respectively, while System V considers them a separate set and obsolete) (CWE-676)",
   "timeToFix" : 5
 }, {
-  "patternId" : "publicAllocationError",
-  "title" : "Possible leak in public function. The pointer 'varname' is not deallocated before it is allocated.",
-  "description" : "Possible leak in public function. The pointer 'varname' is not deallocated before it is allocated.",
+  "patternId" : "jrand48",
+  "title" : "Finds potential security problems in jrand48 calls",
+  "description" : "This function is not sufficiently random for security-related functions such as key and nonce creation (CWE-327)",
   "timeToFix" : 5
 }, {
-  "patternId" : "unsafeClassCanLeak",
-  "title" : "Class 'class' is unsafe, 'class::varname' can leak by wrong usage.",
-  "description" : "The class 'class' is unsafe, wrong usage can cause memory/resource leaks for 'class::varname'. This can for instance be fixed by adding proper cleanup in the destructor.",
+  "patternId" : "lcong48",
+  "title" : "Finds potential security problems in lcong48 calls",
+  "description" : "This function is not sufficiently random for security-related functions such as key and nonce creation (CWE-327)",
   "timeToFix" : 5
 }, {
-  "patternId" : "memleak",
-  "title" : "Memory leak: varname",
-  "description" : "Memory leak: varname",
+  "patternId" : "lrand48",
+  "title" : "Finds potential security problems in lrand48 calls",
+  "description" : "This function is not sufficiently random for security-related functions such as key and nonce creation (CWE-327)",
   "timeToFix" : 5
 }, {
-  "patternId" : "resourceLeak",
-  "title" : "Resource leak: varname",
-  "description" : "Resource leak: varname",
+  "patternId" : "lstrcat",
+  "title" : "Finds potential security problems in lstrcat calls",
+  "description" : "Does not check for buffer overflows when concatenating to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "deallocDealloc",
-  "title" : "Deallocating a deallocated pointer: varname",
-  "description" : "Deallocating a deallocated pointer: varname",
+  "patternId" : "lstrcatA",
+  "title" : "Finds potential security problems in lstrcatA calls",
+  "description" : "Does not check for buffer overflows when concatenating to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "deallocuse",
-  "title" : "Dereferencing 'varname' after it is deallocated / released",
-  "description" : "Dereferencing 'varname' after it is deallocated / released",
+  "patternId" : "lstrcatW",
+  "title" : "Finds potential security problems in lstrcatW calls",
+  "description" : "Does not check for buffer overflows when concatenating to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "mismatchSize",
-  "title" : "The allocated size sz is not a multiple of the underlying type's size.",
-  "description" : "The allocated size sz is not a multiple of the underlying type's size.",
+  "patternId" : "lstrcatn",
+  "title" : "Finds potential security problems in lstrcatn calls",
+  "description" : "Easily used incorrectly (e.g., incorrectly computing the correct maximum size to add) [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "mismatchAllocDealloc",
-  "title" : "Mismatching allocation and deallocation: varname",
-  "description" : "Mismatching allocation and deallocation: varname",
+  "patternId" : "lstrcatnA",
+  "title" : "Finds potential security problems in lstrcatnA calls",
+  "description" : "Does not check for buffer overflows when concatenating to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "memleakOnRealloc",
-  "title" : "Common realloc mistake: 'varname' nulled but not freed upon failure",
-  "description" : "Common realloc mistake: 'varname' nulled but not freed upon failure",
+  "patternId" : "lstrcatnW",
+  "title" : "Finds potential security problems in lstrcatnW calls",
+  "description" : "Does not check for buffer overflows when concatenating to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "nullPointer",
-  "title" : "Null pointer dereference",
-  "description" : "Null pointer dereference",
+  "patternId" : "lstrcpy",
+  "title" : "Finds potential security problems in lstrcpy calls",
+  "description" : "Does not check for buffer overflows when copying to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "nullPointerDefaultArg",
-  "title" : "Possible null pointer dereference if the default parameter value is used: pointer",
-  "description" : "Possible null pointer dereference if the default parameter value is used: pointer",
+  "patternId" : "lstrcpyA",
+  "title" : "Finds potential security problems in lstrcpyA calls",
+  "description" : "Does not check for buffer overflows when copying to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "nullPointerRedundantCheck",
-  "title" : "Either the condition is redundant or there is possible null pointer dereference: pointer.",
-  "description" : "Either the condition is redundant or there is possible null pointer dereference: pointer.",
+  "patternId" : "lstrcpyW",
+  "title" : "Finds potential security problems in lstrcpyW calls",
+  "description" : "Does not check for buffer overflows when copying to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "nullPointerArithmetic",
-  "title" : "Pointer arithmetic with NULL pointer.",
-  "description" : "Pointer arithmetic with NULL pointer.",
+  "patternId" : "lstrcpyn",
+  "title" : "Finds potential security problems in lstrcpyn calls",
+  "description" : "Easily used incorrectly; doesn't always \\0-terminate or check for invalid pointers [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "zerodiv",
-  "title" : "Division by zero.",
-  "description" : "Division by zero.",
+  "patternId" : "lstrcpynA",
+  "title" : "Finds potential security problems in lstrcpynA calls",
+  "description" : "Does not check for buffer overflows when copying to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "zerodivcond",
-  "title" : "Either the condition is redundant or there is division by zero.",
-  "description" : "Either the condition is redundant or there is division by zero.",
+  "patternId" : "lstrcpynW",
+  "title" : "Finds potential security problems in lstrcpynW calls",
+  "description" : "Does not check for buffer overflows when copying to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "unusedScopedObject",
-  "title" : "Instance of 'varname' object is destroyed immediately.",
-  "description" : "Instance of 'varname' object is destroyed immediately.",
+  "patternId" : "lstrncat",
+  "title" : "Finds potential security problems in lstrncat calls",
+  "description" : "Does not check for buffer overflows when concatenating to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "invalidPointerCast",
-  "title" : "Casting between float* and double* which have an incompatible binary data representation.",
-  "description" : "Casting between float* and double* which have an incompatible binary data representation.",
+  "patternId" : "memalign",
+  "title" : "Finds potential security problems in memalign calls",
+  "description" : "On some systems (though not Linux-based systems) an attempt to free() results from memalign() may fail. This may, on a few systems, be exploitable.  Also note that memalign() may not check that the boundary parameter is correct (CWE-676)",
   "timeToFix" : 5
 }, {
-  "patternId" : "shiftNegativeLHS",
-  "title" : "Shifting a negative value is technically undefined behaviour",
-  "description" : "Shifting a negative value is technically undefined behaviour",
+  "patternId" : "memcpy",
+  "title" : "Finds potential security problems in memcpy calls",
+  "description" : "Does not check for buffer overflows when copying to destination (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "shiftNegative",
-  "title" : "Shifting by a negative value is undefined behaviour",
-  "description" : "Shifting by a negative value is undefined behaviour",
+  "patternId" : "mkstemp",
+  "title" : "Finds potential security problems in mkstemp calls",
+  "description" : "Potential for temporary file vulnerability in some circumstances.  Some older Unix-like systems create temp files with permission to write by all by default, so be sure to set the umask to override this. Also, some older Unix systems might fail to use O_EXCL when opening the file, so make sure that O_EXCL is used by the library (CWE-377)",
   "timeToFix" : 5
 }, {
-  "patternId" : "wrongPipeParameterSize",
-  "title" : "Buffer 'varname' must have size of 2 integers if used as parameter of pipe().",
-  "description" : "The pipe()/pipe2() system command takes an argument, which is an array of exactly two integers.\\012The variable 'varname' is an array of size dimension, which does not match.",
+  "patternId" : "mktemp",
+  "title" : "Finds potential security problems in mktemp calls",
+  "description" : "Temporary file race condition (CWE-377)",
   "timeToFix" : 5
 }, {
-  "patternId" : "raceAfterInterlockedDecrement",
-  "title" : "Race condition: non-interlocked access after InterlockedDecrement(). Use InterlockedDecrement() return value instead.",
-  "description" : "Race condition: non-interlocked access after InterlockedDecrement(). Use InterlockedDecrement() return value instead.",
+  "patternId" : "mrand48",
+  "title" : "Finds potential security problems in mrand48 calls",
+  "description" : "This function is not sufficiently random for security-related functions such as key and nonce creation (CWE-327)",
   "timeToFix" : 5
 }, {
-  "patternId" : "redundantCopyLocalConst",
-  "title" : "Use const reference for 'varname' to avoid unnecessary data copying.",
-  "description" : "The const variable 'varname' is assigned a copy of the data. You can avoid the unnecessary data copying by converting 'varname' to const reference.",
+  "patternId" : "nrand48",
+  "title" : "Finds potential security problems in nrand48 calls",
+  "description" : "This function is not sufficiently random for security-related functions such as key and nonce creation (CWE-327)",
   "timeToFix" : 5
 }, {
-  "patternId" : "redundantCopy",
-  "title" : "Buffer 'var' is being written before its old content has been used.",
-  "description" : "Buffer 'var' is being written before its old content has been used.",
+  "patternId" : "open",
+  "title" : "Finds potential security problems in open calls",
+  "description" : "Check when opening files - can an attacker redirect it (via symlinks), force the opening of special file type (e.g., device files), move things around to create a race condition, control its ancestors, or change its contents? (CWE-362)",
   "timeToFix" : 5
 }, {
-  "patternId" : "redundantAssignment",
-  "title" : "Variable 'var' is reassigned a value before the old one has been used.",
-  "description" : "Variable 'var' is reassigned a value before the old one has been used.",
+  "patternId" : "popen",
+  "title" : "Finds potential security problems in popen calls",
+  "description" : "This causes a new program to execute and is difficult to use safely (CWE-78)",
   "timeToFix" : 5
 }, {
-  "patternId" : "comparisonFunctionIsAlwaysTrueOrFalse",
-  "title" : "Comparison of two identical variables with isless(varName,varName) always evaluates to false.",
-  "description" : "The function isless is designed to compare two variables. Calling this function with one variable (varName) for both parameters leads to a statement which is always false.",
+  "patternId" : "printf",
+  "title" : "Finds potential security problems in printf calls",
+  "description" : "If format strings can be influenced by an attacker, they can be exploited (CWE-134)",
   "timeToFix" : 5
 }, {
-  "patternId" : "checkCastIntToCharAndBack",
-  "title" : "Storing func_name() return value in char variable and then comparing with EOF.",
-  "description" : "When saving func_name() return value in char variable there is loss of precision.  When func_name() returns EOF this value is truncated. Comparing the char variable with EOF can have unexpected results. For instance a loop \"while (EOF != (c = func_name());\" loops forever on some compilers/platforms and on other compilers/platforms it will stop when the file contains a matching character.",
+  "patternId" : "random",
+  "title" : "Finds potential security problems in random calls",
+  "description" : "This function is not sufficiently random for security-related functions such as key and nonce creation (CWE-327)",
   "timeToFix" : 5
 }, {
-  "patternId" : "cstyleCast",
-  "title" : "C-style pointer casting",
-  "description" : "C-style pointer casting detected. C++ offers four different kinds of casts as replacements: static_cast, const_cast, dynamic_cast and reinterpret_cast. A C-style cast could evaluate to any of those automatically, thus it is considered safer if the programmer explicitly states which kind of cast is expected. See also: https://www.securecoding.cert.org/confluence/display/cplusplus/EXP05-CPP.+Do+not+use+C-style+casts.",
+  "patternId" : "read",
+  "title" : "Finds potential security problems in read calls",
+  "description" : "Check buffer boundaries if used in a loop including recursive loops (CWE-120, CWE-20)",
   "timeToFix" : 5
 }, {
-  "patternId" : "passedByValue",
-  "title" : "Function parameter 'parametername' should be passed by const reference.",
-  "description" : "Parameter 'parametername' is passed by value. It could be passed as a const reference which is usually faster and recommended in C++.",
+  "patternId" : "readlink",
+  "title" : "Finds potential security problems in readlink calls",
+  "description" : "This accepts filename arguments; if an attacker can move those files or change the link content, a race condition results.  Also, it does not terminate with ASCII NUL. (CWE-362, CWE-20)",
   "timeToFix" : 5
 }, {
-  "patternId" : "constStatement",
-  "title" : "Redundant code: Found a statement that begins with type constant.",
-  "description" : "Redundant code: Found a statement that begins with type constant.",
+  "patternId" : "readv",
+  "title" : "Finds potential security problems in readv calls",
+  "description" : "Function accepts input from outside program (CWE-20)",
   "timeToFix" : 5
 }, {
-  "patternId" : "signedCharArrayIndex",
-  "title" : "Signed 'char' type used as array index.",
-  "description" : "Signed 'char' type used as array index. If the value can be greater than 127 there will be a buffer underflow because of sign extension.",
+  "patternId" : "realpath",
+  "title" : "Finds potential security problems in realpath calls",
+  "description" : "This function does not protect against buffer overflows, and some implementations can overflow internally (CWE-120/CWE-785!)",
   "timeToFix" : 5
 }, {
-  "patternId" : "unknownSignCharArrayIndex",
-  "title" : "'char' type used as array index.",
-  "description" : "'char' type used as array index. Values greater that 127 will be treated depending on whether 'char' is signed or unsigned on target platform.",
+  "patternId" : "recv",
+  "title" : "Finds potential security problems in recv calls",
+  "description" : "Function accepts input from outside program (CWE-20)",
   "timeToFix" : 5
 }, {
-  "patternId" : "charBitOp",
-  "title" : "When using 'char' variables in bit operations, sign extension can generate unexpected results.",
-  "description" : "When using 'char' variables in bit operations, sign extension can generate unexpected results. For example:\\012    char c = 0x80;\\012    int i = 0 | c;\\012    if (i & 0x8000)\\012        printf(\"not expected\");\\012The \"not expected\" will be printed on the screen.",
+  "patternId" : "recvfrom",
+  "title" : "Finds potential security problems in recvfrom calls",
+  "description" : "Function accepts input from outside program (CWE-20)",
   "timeToFix" : 5
 }, {
-  "patternId" : "variableScope",
-  "title" : "The scope of the variable 'varname' can be reduced.",
-  "description" : "The scope of the variable 'varname' can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops.",
+  "patternId" : "recvmsg",
+  "title" : "Finds potential security problems in recvmsg calls",
+  "description" : "Function accepts input from outside program (CWE-20)",
   "timeToFix" : 5
 }, {
-  "patternId" : "redundantAssignInSwitch",
-  "title" : "Variable 'var' is reassigned a value before the old one has been used. 'break;' missing?",
-  "description" : "Variable 'var' is reassigned a value before the old one has been used. 'break;' missing?",
+  "patternId" : "scanf",
+  "title" : "Finds potential security problems in scanf calls",
+  "description" : "The scanf() family's %s operation, without a limit specification, permits buffer overflows (CWE-120, CWE-20)",
   "timeToFix" : 5
 }, {
-  "patternId" : "redundantCopyInSwitch",
-  "title" : "Buffer 'var' is being written before its old content has been used. 'break;' missing?",
-  "description" : "Buffer 'var' is being written before its old content has been used. 'break;' missing?",
+  "patternId" : "seed48",
+  "title" : "Finds potential security problems in seed48 calls",
+  "description" : "This function is not sufficiently random for security-related functions such as key and nonce creation (CWE-327)",
   "timeToFix" : 5
 }, {
-  "patternId" : "suspiciousCase",
-  "title" : "Found suspicious case label in switch(). Operator '||' probably doesn't work as intended.",
-  "description" : "Using an operator like '||' in a case label is suspicious. Did you intend to use a bitwise operator, multiple case labels or if/else instead?",
+  "patternId" : "setstate",
+  "title" : "Finds potential security problems in setstate calls",
+  "description" : "This function is not sufficiently random for security-related functions such as key and nonce creation (CWE-327)",
   "timeToFix" : 5
 }, {
-  "patternId" : "suspiciousEqualityComparison",
-  "title" : "Found suspicious equality comparison. Did you intend to assign a value instead?",
-  "description" : "Found suspicious equality comparison. Did you intend to assign a value instead?",
+  "patternId" : "snprintf",
+  "title" : "Finds potential security problems in snprintf calls",
+  "description" : "If format strings can be influenced by an attacker, they can be exploited, and note that sprintf variations do not always \\0-terminate (CWE-134)",
   "timeToFix" : 5
 }, {
-  "patternId" : "selfAssignment",
-  "title" : "Redundant assignment of 'varname' to itself.",
-  "description" : "Redundant assignment of 'varname' to itself.",
+  "patternId" : "sprintf",
+  "title" : "Finds potential security problems in sprintf calls",
+  "description" : "Does not check for buffer overflows (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "clarifyCalculation",
-  "title" : "Clarify calculation precedence for '+' and '?'.",
-  "description" : "Suspicious calculation. Please use parentheses to clarify the code. The code ''a+b?c:d'' should be written as either ''(a+b)?c:d'' or ''a+(b?c:d)''.",
+  "patternId" : "srand",
+  "title" : "Finds potential security problems in srand calls",
+  "description" : "This function is not sufficiently random for security-related functions such as key and nonce creation (CWE-327)",
   "timeToFix" : 5
 }, {
-  "patternId" : "clarifyStatement",
-  "title" : "Ineffective statement similar to '*A++;'. Did you intend to write '(*A)++;'?",
-  "description" : "A statement like '*A++;' might not do what you intended. Postfix 'operator++' is executed before 'operator*'. Thus, the dereference is meaningless. Did you intend to write '(*A)++;'?",
+  "patternId" : "srandom",
+  "title" : "Finds potential security problems in srandom calls",
+  "description" : "This function is not sufficiently random for security-related functions such as key and nonce creation (CWE-327)",
   "timeToFix" : 5
 }, {
-  "patternId" : "duplicateBranch",
-  "title" : "Found duplicate branches for 'if' and 'else'.",
-  "description" : "Finding the same code in an 'if' and related 'else' branch is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct.",
+  "patternId" : "sscanf",
+  "title" : "Finds potential security problems in sscanf calls",
+  "description" : "The scanf() family's %s operation, without a limit specification, permits buffer overflows (CWE-120, CWE-20)",
   "timeToFix" : 5
 }, {
-  "patternId" : "oppositeExpression",
-  "title" : "Opposite expression on both sides of '&&'.",
-  "description" : "Finding the opposite expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct.",
+  "patternId" : "ssignal",
+  "title" : "Finds potential security problems in ssignal calls",
+  "description" : "These functions are considered obsolete on most systems, and very non-poertable (Linux-based systems handle them radically different, basically if gsignal/ssignal were the same as raise/signal respectively, while System V considers them a separate set and obsolete) (CWE-676)",
   "timeToFix" : 5
 }, {
-  "patternId" : "duplicateExpression",
-  "title" : "Same expression on both sides of '&&'.",
-  "description" : "Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct.",
+  "patternId" : "strCatBuff",
+  "title" : "Finds potential security problems in strCatBuff calls",
+  "description" : "Does not check for buffer overflows when concatenating to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "duplicateValueTernary",
-  "title" : "Same value in both branches of ternary operator.",
-  "description" : "Finding the same value in both branches of ternary operator is suspicious as the same code is executed regardless of the condition.",
+  "patternId" : "strcadd",
+  "title" : "Finds potential security problems in strcadd calls",
+  "description" : "Subject to buffer overflow if buffer is not as big as claimed (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "duplicateExpressionTernary",
-  "title" : "Same expression in both branches of ternary operator.",
-  "description" : "Finding the same expression in both branches of ternary operator is suspicious as the same code is executed regardless of the condition.",
+  "patternId" : "strcat",
+  "title" : "Finds potential security problems in strcat calls",
+  "description" : "Does not check for buffer overflows when concatenating to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "duplicateBreak",
-  "title" : "Consecutive return, break, continue, goto or throw statements are unnecessary.",
-  "description" : "Consecutive return, break, continue, goto or throw statements are unnecessary. The second statement can never be executed, and so should be removed.",
+  "patternId" : "strccpy",
+  "title" : "Finds potential security problems in strccpy calls",
+  "description" : "Subject to buffer overflow if buffer is not as big as claimed (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "unreachableCode",
-  "title" : "Statements following return, break, continue, goto or throw will never be executed.",
-  "description" : "Statements following return, break, continue, goto or throw will never be executed.",
+  "patternId" : "strcpy",
+  "title" : "Finds potential security problems in strcpy calls",
+  "description" : "Does not check for buffer overflows when copying to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "unsignedLessThanZero",
-  "title" : "Checking if unsigned variable 'varname' is less than zero.",
-  "description" : "The unsigned variable 'varname' will never be negative so it is either pointless or an error to check if it is.",
+  "patternId" : "strcpyA",
+  "title" : "Finds potential security problems in strcpyA calls",
+  "description" : "Does not check for buffer overflows when copying to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "unsignedPositive",
-  "title" : "Unsigned variable 'varname' can't be negative so it is unnecessary to test it.",
-  "description" : "Unsigned variable 'varname' can't be negative so it is unnecessary to test it.",
+  "patternId" : "strcpyW",
+  "title" : "Finds potential security problems in strcpyW calls",
+  "description" : "Does not check for buffer overflows when copying to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "pointerLessThanZero",
-  "title" : "A pointer can not be negative so it is either pointless or an error to check if it is.",
-  "description" : "A pointer can not be negative so it is either pointless or an error to check if it is.",
+  "patternId" : "strcpynA",
+  "title" : "Finds potential security problems in strcpynA calls",
+  "description" : "Does not check for buffer overflows when copying to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "pointerPositive",
-  "title" : "A pointer can not be negative so it is either pointless or an error to check if it is not.",
-  "description" : "A pointer can not be negative so it is either pointless or an error to check if it is not.",
+  "patternId" : "streadd",
+  "title" : "Finds potential security problems in streadd calls",
+  "description" : "This function does not protect against buffer overflows (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "suspiciousSemicolon",
-  "title" : "Suspicious use of ; at the end of '' statement.",
-  "description" : "Suspicious use of ; at the end of '' statement.",
+  "patternId" : "strecpy",
+  "title" : "Finds potential security problems in strecpy calls",
+  "description" : "This function does not protect against buffer overflows (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "incompleteArrayFill",
-  "title" : "Array 'buffer' is filled incompletely. Did you forget to multiply the size given to 'memset()' with 'sizeof(*buffer)'?",
-  "description" : "The array 'buffer' is filled incompletely. The function 'memset()' needs the size given in bytes, but an element of the given array is larger than one byte. Did you forget to multiply the size with 'sizeof(*buffer)'?",
+  "patternId" : "strfry",
+  "title" : "Finds potential security problems in strfry calls",
+  "description" : "This function is not sufficiently random for security-related functions such as key and nonce creation (CWE-327)",
   "timeToFix" : 5
 }, {
-  "patternId" : "varFuncNullUB",
-  "title" : "Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.",
-  "description" : "Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.\\012The C99 standard, in section 7.15.1.1, states that if the type used by va_arg() is not compatible with the type of the actual next argument (as promoted according to the default argument promotions), the behavior is undefined.\\012The value of the NULL macro is an implementation-defined null pointer constant (7.",
+  "patternId" : "strlen",
+  "title" : "Finds potential security problems in strlen calls",
+  "description" : "Does not handle strings that are not \\0-terminated; if given one it may perform an over-read (it could cause a crash if unprotected) (CWE-126)",
   "timeToFix" : 5
 }, {
-  "patternId" : "nanInArithmeticExpression",
-  "title" : "Using NaN/Inf in a computation.",
-  "description" : "Using NaN/Inf in a computation. Although nothing bad really happens, it is suspicious.",
+  "patternId" : "strncat",
+  "title" : "Finds potential security problems in strncat calls",
+  "description" : "Easily used incorrectly (e.g., incorrectly computing the correct maximum size to add) [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "commaSeparatedReturn",
-  "title" : "Comma is used in return statement. The comma can easily be misread as a ';'.",
-  "description" : "Comma is used in return statement. When comma is used in a return statement it can easily be misread as a semicolon. For example in the code below the value of 'b' is returned if the condition is true, but it is easy to think that 'a+1' is returned:\\012    if (x)\\012        return a + 1,\\012    b++;\\012However it can be useful to use comma in macros. Cppcheck does not warn when such a macro is then used in a return statement, it is less likely such code is misunderstood.",
+  "patternId" : "strncpy",
+  "title" : "Finds potential security problems in strncpy calls",
+  "description" : "Easily used incorrectly; doesn't always \\0-terminate or check for invalid pointers [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "redundantPointerOp",
-  "title" : "Redundant pointer operation on 'varname' - it's already a pointer.",
-  "description" : "Redundant pointer operation on 'varname' - it's already a pointer.",
+  "patternId" : "strtrns",
+  "title" : "Finds potential security problems in strtrns calls",
+  "description" : "This function does not protect against buffer overflows (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "unusedLabelSwitch",
-  "title" : "Label '' is not used. Should this be a 'case' of the enclosing switch()?",
-  "description" : "Label '' is not used. Should this be a 'case' of the enclosing switch()?",
+  "patternId" : "swprintf",
+  "title" : "Finds potential security problems in swprintf calls",
+  "description" : "Does not check for buffer overflows (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "unusedLabel",
-  "title" : "Label '' is not used.",
-  "description" : "Label '' is not used.",
+  "patternId" : "syslog",
+  "title" : "Finds potential security problems in syslog calls",
+  "description" : "If syslog's format strings can be influenced by an attacker, they can be exploited (CWE-134)",
   "timeToFix" : 5
 }, {
-  "patternId" : "unknownEvaluationOrder",
-  "title" : "Expression 'x = x++;' depends on order of evaluation of side effects",
-  "description" : "Expression 'x = x++;' depends on order of evaluation of side effects",
+  "patternId" : "system",
+  "title" : "Finds potential security problems in system calls",
+  "description" : "This causes a new program to execute and is difficult to use safely (CWE-78)",
   "timeToFix" : 5
 }, {
-  "patternId" : "accessMoved",
-  "title" : "Access of moved variable 'v'.",
-  "description" : "Access of moved variable 'v'.",
+  "patternId" : "tempnam",
+  "title" : "Finds potential security problems in tempnam calls",
+  "description" : "Temporary file race condition (CWE-377)",
   "timeToFix" : 5
 }, {
-  "patternId" : "accessForwarded",
-  "title" : "Access of forwarded variable 'v'.",
-  "description" : "Access of forwarded variable 'v'.",
+  "patternId" : "tmpfile",
+  "title" : "Finds potential security problems in tmpfile calls",
+  "description" : "Function tmpfile() has a security flaw on some systems (e.g., older System V systems) (CWE-377)",
   "timeToFix" : 5
 }, {
-  "patternId" : "funcArgNamesDifferent",
-  "title" : "Function 'function' argument 2 names different: declaration 'A' definition 'B'.",
-  "description" : "Function 'function' argument 2 names different: declaration 'A' definition 'B'.",
+  "patternId" : "tmpnam",
+  "title" : "Finds potential security problems in tmpnam calls",
+  "description" : "Temporary file race condition (CWE-377)",
   "timeToFix" : 5
 }, {
-  "patternId" : "funcArgOrderDifferent",
-  "title" : "Function 'function' argument order different: declaration '' definition ''",
-  "description" : "Function 'function' argument order different: declaration '' definition ''",
+  "patternId" : "ulimit",
+  "title" : "Finds potential security problems in ulimit calls",
+  "description" : "This C routine is considered obsolete (as opposed to the shell command by the same name, which is NOT obsolete) (CWE-676)",
   "timeToFix" : 5
 }, {
-  "patternId" : "invalidIterator1",
-  "title" : "Invalid iterator: iterator",
-  "description" : "Invalid iterator: iterator",
+  "patternId" : "umask",
+  "title" : "Finds potential security problems in umask calls",
+  "description" : "Ensure that umask is given most restrictive possible setting (e.g., 066 or 077) (CWE-732)",
   "timeToFix" : 5
 }, {
-  "patternId" : "iterators",
-  "title" : "Same iterator is used with different containers 'container1' and 'container2'.",
-  "description" : "Same iterator is used with different containers 'container1' and 'container2'.",
+  "patternId" : "usleep",
+  "title" : "Finds potential security problems in usleep calls",
+  "description" : "This C routine is considered obsolete (as opposed to the shell command by the same name).   The interaction of this function with SIGALRM and other timer functions such as sleep(), alarm(), setitimer(), and nanosleep() is unspecified (CWE-676)",
   "timeToFix" : 5
 }, {
-  "patternId" : "mismatchingContainers",
-  "title" : "Iterators of different containers are used together.",
-  "description" : "Iterators of different containers are used together.",
+  "patternId" : "vfork",
+  "title" : "Finds potential security problems in vfork calls",
+  "description" : "On some old systems, vfork() permits race conditions, and it's very difficult to use correctly (CWE-362)",
   "timeToFix" : 5
 }, {
-  "patternId" : "eraseDereference",
-  "title" : "Invalid iterator 'iter' used.",
-  "description" : "The iterator 'iter' is invalid before being assigned. Dereferencing or comparing it with another iterator is invalid operation.",
+  "patternId" : "vfprintf",
+  "title" : "Finds potential security problems in vfprintf calls",
+  "description" : "If format strings can be influenced by an attacker, they can be exploited (CWE-134)",
   "timeToFix" : 5
 }, {
-  "patternId" : "stlOutOfBounds",
-  "title" : "When i==foo.size(), foo[i] is out of bounds.",
-  "description" : "When i==foo.size(), foo[i] is out of bounds.",
+  "patternId" : "vfscanf",
+  "title" : "Finds potential security problems in vfscanf calls",
+  "description" : "The scanf() family's %s operation, without a limit specification, permits buffer overflows (CWE-120, CWE-20)",
   "timeToFix" : 5
 }, {
-  "patternId" : "invalidIterator2",
-  "title" : "After push_back|push_front|insert(), the iterator 'iterator' may be invalid.",
-  "description" : "After push_back|push_front|insert(), the iterator 'iterator' may be invalid.",
+  "patternId" : "vfwprintf",
+  "title" : "Finds potential security problems in vfwprintf calls",
+  "description" : "If format strings can be influenced by an attacker, they can be exploited (CWE-134)",
   "timeToFix" : 5
 }, {
-  "patternId" : "invalidPointer",
-  "title" : "Invalid pointer 'pointer' after push_back().",
-  "description" : "Invalid pointer 'pointer' after push_back().",
+  "patternId" : "vfwscanf",
+  "title" : "Finds potential security problems in vfwscanf calls",
+  "description" : "The scanf() family's %s operation, without a limit specification, permits buffer overflows (CWE-120, CWE-20)",
   "timeToFix" : 5
 }, {
-  "patternId" : "stlBoundaries",
-  "title" : "Dangerous comparison using operator< on iterator.",
-  "description" : "Iterator compared with operator<. This is dangerous since the order of items in the container is not guaranteed. One should use operator!= instead to compare iterators.",
+  "patternId" : "vprintf",
+  "title" : "Finds potential security problems in vprintf calls",
+  "description" : "If format strings can be influenced by an attacker, they can be exploited (CWE-134)",
   "timeToFix" : 5
 }, {
-  "patternId" : "stlIfFind",
-  "title" : "Suspicious condition. The result of find() is an iterator, but it is not properly checked.",
-  "description" : "Suspicious condition. The result of find() is an iterator, but it is not properly checked.",
+  "patternId" : "vscanf",
+  "title" : "Finds potential security problems in vscanf calls",
+  "description" : "The scanf() family's %s operation, without a limit specification, permits buffer overflows (CWE-120, CWE-20)",
   "timeToFix" : 5
 }, {
-  "patternId" : "stlIfStrFind",
-  "title" : "Inefficient usage of string::find() in condition; string::compare() would be faster.",
-  "description" : "Either inefficient or wrong usage of string::find(). string::compare() will be faster if string::find's result is compared with 0, because it will not scan the whole string. If your intention is to check that there are no findings in the string, you should compare with std::string::npos.",
+  "patternId" : "vsnprintf",
+  "title" : "Finds potential security problems in vsnprintf calls",
+  "description" : "If format strings can be influenced by an attacker, they can be exploited, and note that sprintf variations do not always \\0-terminate (CWE-134)",
   "timeToFix" : 5
 }, {
-  "patternId" : "stlcstr",
-  "title" : "Dangerous usage of c_str(). The value returned by c_str() is invalid after this call.",
-  "description" : "Dangerous usage of c_str(). The c_str() return value is only valid until its string is deleted.",
+  "patternId" : "vsprintf",
+  "title" : "Finds potential security problems in vsprintf calls",
+  "description" : "Does not check for buffer overflows (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "stlcstrReturn",
-  "title" : "Returning the result of c_str() in a function that returns std::string is slow and redundant.",
-  "description" : "The conversion from const char* as returned by c_str() to std::string creates an unnecessary string copy. Solve that by directly returning the string.",
+  "patternId" : "vsscanf",
+  "title" : "Finds potential security problems in vsscanf calls",
+  "description" : "The scanf() family's %s operation, without a limit specification, permits buffer overflows (CWE-120, CWE-20)",
   "timeToFix" : 5
 }, {
-  "patternId" : "stlcstrParam",
-  "title" : "Passing the result of c_str() to a function that takes std::string as argument no. 0 is slow and redundant.",
-  "description" : "The conversion from const char* as returned by c_str() to std::string creates an unnecessary string copy. Solve that by directly passing the string.",
+  "patternId" : "vswprintf",
+  "title" : "Finds potential security problems in vswprintf calls",
+  "description" : "Does not check for buffer overflows (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "stlSize",
-  "title" : "Possible inefficient checking for 'list' emptiness.",
-  "description" : "Checking for 'list' emptiness might be inefficient. Using list.empty() instead of list.size() can be faster. list.size() can take linear time but list.empty() is guaranteed to take constant time.",
+  "patternId" : "vswscanf",
+  "title" : "Finds potential security problems in vswscanf calls",
+  "description" : "The scanf() family's %s operation, without a limit specification, permits buffer overflows (CWE-120, CWE-20)",
   "timeToFix" : 5
 }, {
-  "patternId" : "StlMissingComparison",
-  "title" : "Missing bounds check for extra iterator increment in loop.",
-  "description" : "The iterator incrementing is suspicious - it is incremented at line  and then at line . The loop might unintentionally skip an element in the container. There is no comparison between these increments to prevent that the iterator is incremented beyond the end.",
+  "patternId" : "vwprintf",
+  "title" : "Finds potential security problems in vwprintf calls",
+  "description" : "If format strings can be influenced by an attacker, they can be exploited (CWE-134)",
   "timeToFix" : 5
 }, {
-  "patternId" : "redundantIfRemove",
-  "title" : "Redundant checking of STL container element existence before removing it.",
-  "description" : "Redundant checking of STL container element existence before removing it. It is safe to call the remove method on a non-existing element.",
+  "patternId" : "vwscanf",
+  "title" : "Finds potential security problems in vwscanf calls",
+  "description" : "The scanf() family's %s operation, without a limit specification, permits buffer overflows (CWE-120, CWE-20)",
   "timeToFix" : 5
 }, {
-  "patternId" : "useAutoPointerCopy",
-  "title" : "Copying 'auto_ptr' pointer to another does not create two equal objects since one has lost its ownership of the pointer.",
-  "description" : "'std::auto_ptr' has semantics of strict ownership, meaning that the 'auto_ptr' instance is the sole entity responsible for the object's lifetime. If an 'auto_ptr' is copied, the source looses the reference.",
+  "patternId" : "wchar_t",
+  "title" : "Finds potential security problems in wchar_t calls",
+  "description" : "Statically-sized arrays can be improperly restricted, leading to potential overflows or other issues (CWE-119!/CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "useAutoPointerContainer",
-  "title" : "You can randomly lose access to pointers if you store 'auto_ptr' pointers in an STL container.",
-  "description" : "An element of container must be able to be copied but 'auto_ptr' does not fulfill this requirement. You should consider to use 'shared_ptr' or 'unique_ptr'. It is suitable for use in containers, because they no longer copy their values, they move them.",
+  "patternId" : "wcscat",
+  "title" : "Finds potential security problems in wcscat calls",
+  "description" : "Does not check for buffer overflows when concatenating to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "useAutoPointerArray",
-  "title" : "Object pointed by an 'auto_ptr' is destroyed using operator 'delete'. You should not use 'auto_ptr' for pointers obtained with operator 'new[]'.",
-  "description" : "Object pointed by an 'auto_ptr' is destroyed using operator 'delete'. This means that you should only use 'auto_ptr' for pointers obtained with operator 'new'. This excludes arrays, which are allocated by operator 'new[]' and must be deallocated by operator 'delete[]'.",
+  "patternId" : "wcscpy",
+  "title" : "Finds potential security problems in wcscpy calls",
+  "description" : "Does not check for buffer overflows when copying to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "useAutoPointerMalloc",
-  "title" : "Object pointed by an 'auto_ptr' is destroyed using operator 'delete'. You should not use 'auto_ptr' for pointers obtained with function 'malloc'.",
-  "description" : "Object pointed by an 'auto_ptr' is destroyed using operator 'delete'. You should not use 'auto_ptr' for pointers obtained with function 'malloc'. This means that you should only use 'auto_ptr' for pointers obtained with operator 'new'. This excludes use C library allocation functions (for example 'malloc'), which must be deallocated by the appropriate C library function.",
+  "patternId" : "wcslen",
+  "title" : "Finds potential security problems in wcslen calls",
+  "description" : "Does not handle strings that are not \\0-terminated; if given one it may perform an over-read (it could cause a crash if unprotected) (CWE-126)",
   "timeToFix" : 5
 }, {
-  "patternId" : "uselessCallsCompare",
-  "title" : "It is inefficient to call 'str.find(str)' as it always returns 0.",
-  "description" : "'std::string::find()' returns zero when given itself as parameter (str.find(str)). As it is currently the code is inefficient. It is possible either the string searched ('str') or searched for ('str') is wrong.",
+  "patternId" : "wcsncat",
+  "title" : "Finds potential security problems in wcsncat calls",
+  "description" : "Easily used incorrectly (e.g., incorrectly computing the correct maximum size to add) [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "uselessCallsSwap",
-  "title" : "It is inefficient to swap a object with itself by calling 'str.swap(str)'",
-  "description" : "The 'swap()' function has no logical effect when given itself as parameter (str.swap(str)). As it is currently the code is inefficient. Is the object or the parameter wrong here?",
+  "patternId" : "wcsncpy",
+  "title" : "Finds potential security problems in wcsncpy calls",
+  "description" : "Easily used incorrectly; doesn't always \\0-terminate or check for invalid pointers [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
-  "patternId" : "uselessCallsSubstr",
-  "title" : "Ineffective call of function 'substr' because it returns a copy of the object. Use operator= instead.",
-  "description" : "Ineffective call of function 'substr' because it returns a copy of the object. Use operator= instead.",
+  "patternId" : "wprintf",
+  "title" : "Finds potential security problems in wprintf calls",
+  "description" : "If format strings can be influenced by an attacker, they can be exploited (CWE-134)",
   "timeToFix" : 5
 }, {
-  "patternId" : "uselessCallsEmpty",
-  "title" : "Ineffective call of function 'empty()'. Did you intend to call 'clear()' instead?",
-  "description" : "Ineffective call of function 'empty()'. Did you intend to call 'clear()' instead?",
-  "timeToFix" : 5
-}, {
-  "patternId" : "uselessCallsRemove",
-  "title" : "Return value of std::remove() ignored. Elements remain in container.",
-  "description" : "The return value of std::remove() is ignored. This function returns an iterator to the end of the range containing those elements that should be kept. Elements past new end remain valid but with unspecified values. Use the erase method of the container to delete them.",
-  "timeToFix" : 5
-}, {
-  "patternId" : "derefInvalidIterator",
-  "title" : "Possible dereference of an invalid iterator: i",
-  "description" : "Possible dereference of an invalid iterator: i. Make sure to check that the iterator is valid before dereferencing it - not after.",
-  "timeToFix" : 5
-}, {
-  "patternId" : "reademptycontainer",
-  "title" : "Reading from empty STL container 'var'",
-  "description" : "Reading from empty STL container 'var'",
-  "timeToFix" : 5
-}, {
-  "patternId" : "sizeofwithsilentarraypointer",
-  "title" : "Using 'sizeof' on array given as function argument returns size of a pointer.",
-  "description" : "Using 'sizeof' for array given as function argument returns the size of a pointer. It does not return the size of the whole array in bytes as might be expected. For example, this code:\\012     int f(char a[100]) {\\012         return sizeof(a);\\012     }\\012returns 4 (in 32-bit systems) or 8 (in 64-bit systems) instead of 100 (the size of the array in bytes).",
-  "timeToFix" : 5
-}, {
-  "patternId" : "pointerSize",
-  "title" : "Size of pointer 'varname' used instead of size of its data.",
-  "description" : "Size of pointer 'varname' used instead of size of its data. This is likely to lead to a buffer overflow. You probably intend to write 'sizeof(*varname)'.",
-  "timeToFix" : 5
-}, {
-  "patternId" : "sizeofDivisionMemfunc",
-  "title" : "Division by result of sizeof(). memset() expects a size in bytes, did you intend to multiply instead?",
-  "description" : "Division by result of sizeof(). memset() expects a size in bytes, did you intend to multiply instead?",
-  "timeToFix" : 5
-}, {
-  "patternId" : "sizeofwithnumericparameter",
-  "title" : "Suspicious usage of 'sizeof' with a numeric constant as parameter.",
-  "description" : "It is unusual to use a constant value with sizeof. For example, 'sizeof(10)' returns 4 (in 32-bit systems) or 8 (in 64-bit systems) instead of 10. 'sizeof('A')' and 'sizeof(char)' can return different results.",
-  "timeToFix" : 5
-}, {
-  "patternId" : "sizeofsizeof",
-  "title" : "Calling 'sizeof' on 'sizeof'.",
-  "description" : "Calling sizeof for 'sizeof looks like a suspicious code and most likely there should be just one 'sizeof'. The current code is equivalent to 'sizeof(size_t)'",
-  "timeToFix" : 5
-}, {
-  "patternId" : "sizeofCalculation",
-  "title" : "Found calculation inside sizeof().",
-  "description" : "Found calculation inside sizeof().",
-  "timeToFix" : 5
-}, {
-  "patternId" : "sizeofFunctionCall",
-  "title" : "Found function call inside sizeof().",
-  "description" : "Found function call inside sizeof().",
-  "timeToFix" : 5
-}, {
-  "patternId" : "multiplySizeof",
-  "title" : "Multiplying sizeof() with sizeof() indicates a logic error.",
-  "description" : "Multiplying sizeof() with sizeof() indicates a logic error.",
-  "timeToFix" : 5
-}, {
-  "patternId" : "divideSizeof",
-  "title" : "Division of result of sizeof() on pointer type.",
-  "description" : "Division of result of sizeof() on pointer type. sizeof() returns the size of the pointer, not the size of the memory area it points to.",
-  "timeToFix" : 5
-}, {
-  "patternId" : "sizeofVoid",
-  "title" : "Behaviour of 'sizeof(void)' is not covered by the ISO C standard.",
-  "description" : "Behaviour of 'sizeof(void)' is not covered by the ISO C standard. A value for 'sizeof(void)' is defined only as part of a GNU C extension, which defines 'sizeof(void)' to be 1.",
-  "timeToFix" : 5
-}, {
-  "patternId" : "sizeofDereferencedVoidPointer",
-  "title" : "'*varname' is of type 'void', the behaviour of 'sizeof(void)' is not covered by the ISO C standard.",
-  "description" : "'*varname' is of type 'void', the behaviour of 'sizeof(void)' is not covered by the ISO C standard. A value for 'sizeof(void)' is defined only as part of a GNU C extension, which defines 'sizeof(void)' to be 1.",
-  "timeToFix" : 5
-}, {
-  "patternId" : "arithOperationsOnVoidPointer",
-  "title" : "'varname' is of type 'vartype'. When using void pointers in calculations, the behaviour is undefined.",
-  "description" : "'varname' is of type 'vartype'. When using void pointers in calculations, the behaviour is undefined. Arithmetic operations on 'void *' is a GNU C extension, which defines the 'sizeof(void)' to be 1.",
-  "timeToFix" : 5
-}, {
-  "patternId" : "stringLiteralWrite",
-  "title" : "Modifying string literal directly or indirectly is undefined behaviour.",
-  "description" : "Modifying string literal directly or indirectly is undefined behaviour.",
-  "timeToFix" : 5
-}, {
-  "patternId" : "sprintfOverlappingData",
-  "title" : "Undefined behavior: Variable 'varname' is used as parameter and destination in s[n]printf().",
-  "description" : "The variable 'varname' is used both as a parameter and as destination in s[n]printf(). The origin and destination buffers overlap. Quote from glibc (C-library) documentation (http://www.gnu.org/software/libc/manual/html_mono/libc.html#Formatted-Output-Functions): \"If copying takes place between objects that overlap as a result of a call to sprintf() or snprintf(), the results are undefined.\"",
-  "timeToFix" : 5
-}, {
-  "patternId" : "strPlusChar",
-  "title" : "Unusual pointer arithmetic. A value of type 'char' is added to a string literal.",
-  "description" : "Unusual pointer arithmetic. A value of type 'char' is added to a string literal.",
-  "timeToFix" : 5
-}, {
-  "patternId" : "incorrectStringCompare",
-  "title" : "String literal \"Hello World\" doesn't match length argument for substr().",
-  "description" : "String literal \"Hello World\" doesn't match length argument for substr().",
-  "timeToFix" : 5
-}, {
-  "patternId" : "literalWithCharPtrCompare",
-  "title" : "String literal compared with variable 'foo'. Did you intend to use strcmp() instead?",
-  "description" : "String literal compared with variable 'foo'. Did you intend to use strcmp() instead?",
-  "timeToFix" : 5
-}, {
-  "patternId" : "charLiteralWithCharPtrCompare",
-  "title" : "Char literal compared with pointer 'foo'. Did you intend to dereference it?",
-  "description" : "Char literal compared with pointer 'foo'. Did you intend to dereference it?",
-  "timeToFix" : 5
-}, {
-  "patternId" : "incorrectStringBooleanError",
-  "title" : "Conversion of string literal \"Hello World\" to bool always evaluates to true.",
-  "description" : "Conversion of string literal \"Hello World\" to bool always evaluates to true.",
-  "timeToFix" : 5
-}, {
-  "patternId" : "staticStringCompare",
-  "title" : "Unnecessary comparison of static strings.",
-  "description" : "The compared strings, 'str1' and 'str2', are always unequal. Therefore the comparison is unnecessary and looks suspicious.",
-  "timeToFix" : 5
-}, {
-  "patternId" : "stringCompare",
-  "title" : "Comparison of identical string variables.",
-  "description" : "The compared strings, 'varname1' and 'varname2', are identical. This could be a logic bug.",
-  "timeToFix" : 5
-}, {
-  "patternId" : "overlappingStrcmp",
-  "title" : "The expression 'strcmp(x,\"def\") != 0' is suspicious. It overlaps 'strcmp(x,\"abc\") == 0'.",
-  "description" : "The expression 'strcmp(x,\"def\") != 0' is suspicious. It overlaps 'strcmp(x,\"abc\") == 0'.",
-  "timeToFix" : 5
-}, {
-  "patternId" : "shiftTooManyBits",
-  "title" : "Shifting 32-bit value by 40 bits is undefined behaviour",
-  "description" : "Shifting 32-bit value by 40 bits is undefined behaviour",
-  "timeToFix" : 5
-}, {
-  "patternId" : "shiftTooManyBitsSigned",
-  "title" : "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-  "description" : "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-  "timeToFix" : 5
-}, {
-  "patternId" : "integerOverflow",
-  "title" : "Signed integer overflow for expression ''.",
-  "description" : "Signed integer overflow for expression ''.",
-  "timeToFix" : 5
-}, {
-  "patternId" : "signConversion",
-  "title" : "Suspicious code: sign conversion of var in calculation, even though var can have a negative value",
-  "description" : "Suspicious code: sign conversion of var in calculation, even though var can have a negative value",
-  "timeToFix" : 5
-}, {
-  "patternId" : "truncLongCastAssignment",
-  "title" : "int result is assigned to long variable. If the variable is long to avoid loss of information, then you have loss of information.",
-  "description" : "int result is assigned to long variable. If the variable is long to avoid loss of information, then there is loss of information. To avoid loss of information you must cast a calculation operand to long, for example 'l = a * b;' => 'l = (long)a * b;'.",
-  "timeToFix" : 5
-}, {
-  "patternId" : "truncLongCastReturn",
-  "title" : "int result is returned as long value. If the return value is long to avoid loss of information, then you have loss of information.",
-  "description" : "int result is returned as long value. If the return value is long to avoid loss of information, then there is loss of information. To avoid loss of information you must cast a calculation operand to long, for example 'return a*b;' => 'return (long)a*b'.",
-  "timeToFix" : 5
-}, {
-  "patternId" : "floatConversionOverflow",
-  "title" : "Undefined behaviour: float (1e+100) to integer conversion overflow.",
-  "description" : "Undefined behaviour: float (1e+100) to integer conversion overflow.",
-  "timeToFix" : 5
-}, {
-  "patternId" : "uninitstring",
-  "title" : "Dangerous usage of 'varname' (strncpy doesn't always null-terminate it).",
-  "description" : "Dangerous usage of 'varname' (strncpy doesn't always null-terminate it).",
-  "timeToFix" : 5
-}, {
-  "patternId" : "uninitdata",
-  "title" : "Memory is allocated but not initialized: varname",
-  "description" : "Memory is allocated but not initialized: varname",
-  "timeToFix" : 5
-}, {
-  "patternId" : "uninitvar",
-  "title" : "Uninitialized variable: varname",
-  "description" : "Uninitialized variable: varname",
-  "timeToFix" : 5
-}, {
-  "patternId" : "uninitStructMember",
-  "title" : "Uninitialized struct member: a.b",
-  "description" : "Uninitialized struct member: a.b",
-  "timeToFix" : 5
-}, {
-  "patternId" : "deadpointer",
-  "title" : "Dead pointer usage. Pointer 'pointer' is dead if it has been assigned '&x' at line 0.",
-  "description" : "Dead pointer usage. Pointer 'pointer' is dead if it has been assigned '&x' at line 0.",
-  "timeToFix" : 5
-}, {
-  "patternId" : "unusedFunction",
-  "title" : "The function 'funcName' is never used.",
-  "description" : "The function 'funcName' is never used.",
-  "timeToFix" : 5
-}, {
-  "patternId" : "unusedVariable",
-  "title" : "Unused variable: varname",
-  "description" : "Unused variable: varname",
-  "timeToFix" : 5
-}, {
-  "patternId" : "unusedAllocatedMemory",
-  "title" : "Variable 'varname' is allocated memory that is never used.",
-  "description" : "Variable 'varname' is allocated memory that is never used.",
-  "timeToFix" : 5
-}, {
-  "patternId" : "unreadVariable",
-  "title" : "Variable 'varname' is assigned a value that is never used.",
-  "description" : "Variable 'varname' is assigned a value that is never used.",
-  "timeToFix" : 5
-}, {
-  "patternId" : "unassignedVariable",
-  "title" : "Variable 'varname' is not assigned a value.",
-  "description" : "Variable 'varname' is not assigned a value.",
-  "timeToFix" : 5
-}, {
-  "patternId" : "unusedStructMember",
-  "title" : "struct member 'structname::variable' is never used.",
-  "description" : "struct member 'structname::variable' is never used.",
-  "timeToFix" : 5
-}, {
-  "patternId" : "postfixOperator",
-  "title" : "Prefer prefix ++/-- operators for non-primitive types.",
-  "description" : "Prefix ++/-- operators should be preferred for non-primitive types. Pre-increment/decrement can be more efficient than post-increment/decrement. Post-increment/decrement usually involves keeping a copy of the previous value around and adds a little extra code.",
-  "timeToFix" : 5
-}, {
-  "patternId" : "va_start_wrongParameter",
-  "title" : "'arg1' given to va_start() is not last named argument of the function. Did you intend to pass 'arg2'?",
-  "description" : "'arg1' given to va_start() is not last named argument of the function. Did you intend to pass 'arg2'?",
-  "timeToFix" : 5
-}, {
-  "patternId" : "va_start_referencePassed",
-  "title" : "Using reference 'arg1' as parameter for va_start() results in undefined behaviour.",
-  "description" : "Using reference 'arg1' as parameter for va_start() results in undefined behaviour.",
-  "timeToFix" : 5
-}, {
-  "patternId" : "va_end_missing",
-  "title" : "va_list 'vl' was opened but not closed by va_end().",
-  "description" : "va_list 'vl' was opened but not closed by va_end().",
-  "timeToFix" : 5
-}, {
-  "patternId" : "va_list_usedBeforeStarted",
-  "title" : "va_list 'vl' used before va_start() was called.",
-  "description" : "va_list 'vl' used before va_start() was called.",
-  "timeToFix" : 5
-}, {
-  "patternId" : "va_start_subsequentCalls",
-  "title" : "va_start() or va_copy() called subsequently on 'vl' without va_end() in between.",
-  "description" : "va_start() or va_copy() called subsequently on 'vl' without va_end() in between.",
-  "timeToFix" : 5
-}, {
-  "patternId" : "missingInclude",
-  "title" : "Include file: \"\" not found.",
-  "description" : "Include file: \"\" not found.",
-  "timeToFix" : 5
-}, {
-  "patternId" : "missingIncludeSystem",
-  "title" : "Include file: <> not found. Please note: Cppcheck does not need standard library headers to get proper results.",
-  "description" : "Include file: <> not found. Please note: Cppcheck does not need standard library headers to get proper results.",
-  "timeToFix" : 5
-}, {
-  "patternId" : "ConfigurationNotChecked",
-  "title" : "Skipping configuration 'X' since the value of 'X' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",
-  "description" : "Skipping configuration 'X' since the value of 'X' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",
-  "timeToFix" : 5
-}, {
-  "patternId" : "preprocessorErrorDirective",
-  "title" : "#error message",
-  "description" : "#error message",
+  "patternId" : "wscanf",
+  "title" : "Finds potential security problems in wscanf calls",
+  "description" : "The scanf() family's %s operation, without a limit specification, permits buffer overflows (CWE-120, CWE-20)",
   "timeToFix" : 5
 } ]
