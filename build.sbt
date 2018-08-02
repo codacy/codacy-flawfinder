@@ -12,7 +12,7 @@ resolvers ++= Seq(
 )
 
 libraryDependencies ++= Seq(
-  "com.codacy" %% "codacy-engine-scala-seed" % "3.0.168",
+  "com.codacy" %% "codacy-engine-scala-seed" % "3.0.183",
   "com.github.pathikrit" %% "better-files" % "3.5.0"
 )
 
