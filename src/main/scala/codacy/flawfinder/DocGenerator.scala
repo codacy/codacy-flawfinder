@@ -25,7 +25,8 @@ object DocGenerator {
 
       val level: String =
         rule.level match {
-          case "1" => "Warning"
+          case "3" => "Warning"
+          case "4" | "5" => "Error"
           case _ => "Info"
         }
 
@@ -63,7 +64,7 @@ object DocGenerator {
       Ruleset(line(0), line(1), line(2), line(2))
     }.toSeq
   }
-
+  
   private def createPatternsAndDescriptionFile(
                                                 version: String,
                                                 rules: Seq[DocGenerator.Ruleset]): Unit = {
