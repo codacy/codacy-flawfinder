@@ -1,4 +1,4 @@
-FROM codacy/codacy-flawfinder-base:latest
+FROM codacy-flawfinder-base:latest
 
 LABEL maintainer="team@codacy.com"
 
