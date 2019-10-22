@@ -1,6 +1,5 @@
 package codacy.flawfinder
 
-import com.codacy.plugins.api.results.Result.Issue
 import com.codacy.plugins.api.results.{Pattern, Result, Tool}
 import com.codacy.plugins.api.{Options, Source}
 import com.codacy.tools.scala.seed.utils.CommandRunner

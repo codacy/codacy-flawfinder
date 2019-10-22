@@ -1,13 +1,13 @@
 {
   "name" : "flawfinder",
-  "version" : "2.0.4",
+  "version" : "2.0.10",
   "patterns" : [ {
     "patternId" : "AddAccessAllowedAce",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "CoImpersonateClient",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "CopyMemory",
@@ -15,83 +15,83 @@
     "category" : "Security"
   }, {
     "patternId" : "CreateProcess",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "CreateProcessAsUser",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "CreateProcessWithLogon",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "EVP_des_cbc",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "EVP_des_cfb",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "EVP_des_ecb",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "EVP_des_ofb",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "EVP_desx_cbc",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "EVP_rc2_40_cbc",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "EVP_rc2_64_cbc",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "EVP_rc4_40",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "EnterCriticalSection",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "GetTempFileName",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "ImpersonateDdeClientWindow",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "ImpersonateLoggedOnUser",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "ImpersonateNamedPipeClient",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "ImpersonateSecurityContext",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "InitializeCriticalSection",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "LoadLibrary",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "LoadLibraryEx",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "MultiByteToWideChar",
@@ -99,99 +99,99 @@
     "category" : "Security"
   }, {
     "patternId" : "RpcImpersonateClient",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "SetSecurityDescriptorDacl",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "SetThreadToken",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "ShellExecute",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "StrCat",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "StrCatA",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "StrCatBuffA",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "StrCatBuffW",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "StrCatChainW",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "StrCatN",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "StrCatNA",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "StrCatNW",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "StrCpy",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "StrCpyA",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "StrCpyN",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "StrCpyNA",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "StrCpyNW",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "StrNCat",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "StrNCatA",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "StrNCatW",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "StrNCpy",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "StrNCpyA",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "StrNCpyW",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "StrcatW",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "TCHAR",
@@ -199,123 +199,123 @@
     "category" : "Security"
   }, {
     "patternId" : "WinExec",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
-    "patternId" : "_ftcsat",
-    "level" : "Info",
+    "patternId" : "_ftcscat",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "_ftcscpy",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "_ftprintf",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "_ftscanf",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "_gettc",
-    "level" : "Warning",
+    "level" : "Info",
     "category" : "Security"
   }, {
     "patternId" : "_getts",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "_mbccat",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "_mbccpy",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "_mbscat",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "_mbscpy",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "_mbslen",
-    "level" : "Warning",
+    "level" : "Info",
     "category" : "Security"
   }, {
     "patternId" : "_mbsnbcat",
-    "level" : "Warning",
+    "level" : "Info",
     "category" : "Security"
   }, {
     "patternId" : "_mbsnbcpy",
-    "level" : "Warning",
+    "level" : "Info",
     "category" : "Security"
   }, {
     "patternId" : "_mbsncpy",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "_snprintf",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "_sntprintf",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "_stprintf",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "_tccat",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "_tccpy",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "_tcscat",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "_tcscpy",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "_tcslen",
-    "level" : "Warning",
+    "level" : "Info",
     "category" : "Security"
   }, {
     "patternId" : "_tcsncat",
-    "level" : "Warning",
+    "level" : "Info",
     "category" : "Security"
   }, {
     "patternId" : "_tcsncpy",
-    "level" : "Warning",
+    "level" : "Info",
     "category" : "Security"
   }, {
     "patternId" : "_tscanf",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "_vftprintf",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "_vsntprintf",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "_vstprintf",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "_vtprintf",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "_wtoi",
@@ -327,7 +327,7 @@
     "category" : "Security"
   }, {
     "patternId" : "access",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "atoi",
@@ -347,63 +347,71 @@
     "category" : "Security"
   }, {
     "patternId" : "chgrp",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "chmod",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "chown",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "chroot",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "crypt",
-    "level" : "Info",
+    "level" : "Error",
+    "category" : "Security"
+  }, {
+    "patternId" : "crypt_r",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "curl_getenv",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "cuserid",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "drand48",
+    "level" : "Warning",
+    "category" : "Security"
+  }, {
+    "patternId" : "equal",
     "level" : "Info",
     "category" : "Security"
   }, {
     "patternId" : "erand48",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "execl",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "execle",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "execlp",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "execv",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "execvp",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "fgetc",
-    "level" : "Warning",
+    "level" : "Info",
     "category" : "Security"
   }, {
     "patternId" : "fopen",
@@ -411,7 +419,7 @@
     "category" : "Security"
   }, {
     "patternId" : "fprintf",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "fread",
@@ -419,182 +427,190 @@
     "category" : "Security"
   }, {
     "patternId" : "fscanf",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "fvwprintf",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "fwprintf",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "fwscanf",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "g_get_home_dir",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "g_get_tmp_dir",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "g_rand_boolean",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "g_rand_double",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "g_rand_double_range",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "g_rand_int",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "g_rand_int_range",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "g_random_boolean",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "g_random_double",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "g_random_double_range",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "g_random_int",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "g_random_int_range",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "getc",
-    "level" : "Warning",
+    "level" : "Info",
     "category" : "Security"
   }, {
     "patternId" : "getchar",
-    "level" : "Warning",
+    "level" : "Info",
     "category" : "Security"
   }, {
     "patternId" : "getenv",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "getlogin",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "getopt",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "getopt_long",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "getpass",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "getpw",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "gets",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "getwd",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "gsignal",
     "level" : "Info",
     "category" : "Security"
   }, {
-    "patternId" : "jrand48",
+    "patternId" : "is_permutation",
     "level" : "Info",
+    "category" : "Security"
+  }, {
+    "patternId" : "jrand48",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "lcong48",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "lrand48",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "lstrcat",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "lstrcatA",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "lstrcatW",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "lstrcatn",
-    "level" : "Warning",
+    "level" : "Info",
     "category" : "Security"
   }, {
     "patternId" : "lstrcatnA",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "lstrcatnW",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "lstrcpy",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "lstrcpyA",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "lstrcpyW",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "lstrcpyn",
-    "level" : "Warning",
+    "level" : "Info",
     "category" : "Security"
   }, {
     "patternId" : "lstrcpynA",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "lstrcpynW",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "lstrncat",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "memalign",
-    "level" : "Warning",
+    "level" : "Info",
     "category" : "Security"
   }, {
     "patternId" : "memcpy",
+    "level" : "Info",
+    "category" : "Security"
+  }, {
+    "patternId" : "mismatch",
     "level" : "Info",
     "category" : "Security"
   }, {
@@ -603,15 +619,15 @@
     "category" : "Security"
   }, {
     "patternId" : "mktemp",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "mrand48",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "nrand48",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "open",
@@ -619,23 +635,23 @@
     "category" : "Security"
   }, {
     "patternId" : "popen",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "printf",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "random",
-    "level" : "Info",
-    "category" : "Security"
-  }, {
-    "patternId" : "read",
     "level" : "Warning",
     "category" : "Security"
   }, {
-    "patternId" : "readlink",
+    "patternId" : "read",
     "level" : "Info",
+    "category" : "Security"
+  }, {
+    "patternId" : "readlink",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "readv",
@@ -643,7 +659,7 @@
     "category" : "Security"
   }, {
     "patternId" : "realpath",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "recv",
@@ -659,35 +675,35 @@
     "category" : "Security"
   }, {
     "patternId" : "scanf",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "seed48",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "setstate",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "snprintf",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "sprintf",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "srand",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "srandom",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "sscanf",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "ssignal",
@@ -695,79 +711,79 @@
     "category" : "Security"
   }, {
     "patternId" : "strCatBuff",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "strcadd",
-    "level" : "Warning",
+    "level" : "Info",
     "category" : "Security"
   }, {
     "patternId" : "strcat",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "strccpy",
-    "level" : "Warning",
+    "level" : "Info",
     "category" : "Security"
   }, {
     "patternId" : "strcpy",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "strcpyA",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "strcpyW",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "strcpynA",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "streadd",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "strecpy",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "strfry",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "strlen",
-    "level" : "Warning",
+    "level" : "Info",
     "category" : "Security"
   }, {
     "patternId" : "strncat",
-    "level" : "Warning",
+    "level" : "Info",
     "category" : "Security"
   }, {
     "patternId" : "strncpy",
-    "level" : "Warning",
+    "level" : "Info",
     "category" : "Security"
   }, {
     "patternId" : "strtrns",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "swprintf",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "syslog",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "system",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "tempnam",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "tmpfile",
@@ -775,19 +791,19 @@
     "category" : "Security"
   }, {
     "patternId" : "tmpnam",
-    "level" : "Info",
+    "level" : "Warning",
     "category" : "Security"
   }, {
     "patternId" : "ulimit",
-    "level" : "Warning",
+    "level" : "Info",
     "category" : "Security"
   }, {
     "patternId" : "umask",
-    "level" : "Warning",
+    "level" : "Info",
     "category" : "Security"
   }, {
     "patternId" : "usleep",
-    "level" : "Warning",
+    "level" : "Info",
     "category" : "Security"
   }, {
     "patternId" : "vfork",
@@ -795,55 +811,55 @@
     "category" : "Security"
   }, {
     "patternId" : "vfprintf",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "vfscanf",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "vfwprintf",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "vfwscanf",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "vprintf",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "vscanf",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "vsnprintf",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "vsprintf",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "vsscanf",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "vswprintf",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "vswscanf",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "vwprintf",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "vwscanf",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "wchar_t",
@@ -851,31 +867,31 @@
     "category" : "Security"
   }, {
     "patternId" : "wcscat",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "wcscpy",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "wcslen",
-    "level" : "Warning",
+    "level" : "Info",
     "category" : "Security"
   }, {
     "patternId" : "wcsncat",
-    "level" : "Warning",
+    "level" : "Info",
     "category" : "Security"
   }, {
     "patternId" : "wcsncpy",
-    "level" : "Warning",
+    "level" : "Info",
     "category" : "Security"
   }, {
     "patternId" : "wprintf",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   }, {
     "patternId" : "wscanf",
-    "level" : "Info",
+    "level" : "Error",
     "category" : "Security"
   } ]
 }

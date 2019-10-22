@@ -249,8 +249,8 @@
   "description" : "This causes a new program to execute and is difficult to use safely (CWE-78)",
   "timeToFix" : 5
 }, {
-  "patternId" : "_ftcsat",
-  "title" : "Finds potential security problems in _ftcsat calls",
+  "patternId" : "_ftcscat",
+  "title" : "Finds potential security problems in _ftcscat calls",
   "description" : "Does not check for buffer overflows when concatenating to destination [MS-banned] (CWE-120)",
   "timeToFix" : 5
 }, {
@@ -451,7 +451,12 @@
 }, {
   "patternId" : "crypt",
   "title" : "Finds potential security problems in crypt calls",
-  "description" : "Function crypt is a poor one-way hashing algorithm; since it only accepts passwords of 8 characters or less, and only a two-byte salt, it is excessively vulnerable to dictionary attacks given today's faster computing equipment (CWE-327)",
+  "description" : "The crypt functions use a poor one-way hashing algorithm; since they only accept passwords of 8 characters or fewer and only a two-byte salt, they are excessively vulnerable to dictionary attacks given today's faster computing equipment (CWE-327)",
+  "timeToFix" : 5
+}, {
+  "patternId" : "crypt_r",
+  "title" : "Finds potential security problems in crypt_r calls",
+  "description" : "The crypt functions use a poor one-way hashing algorithm; since they only accept passwords of 8 characters or fewer and only a two-byte salt, they are excessively vulnerable to dictionary attacks given today's faster computing equipment (CWE-327)",
   "timeToFix" : 5
 }, {
   "patternId" : "curl_getenv",
@@ -467,6 +472,11 @@
   "patternId" : "drand48",
   "title" : "Finds potential security problems in drand48 calls",
   "description" : "This function is not sufficiently random for security-related functions such as key and nonce creation (CWE-327)",
+  "timeToFix" : 5
+}, {
+  "patternId" : "equal",
+  "title" : "Finds potential security problems in equal calls",
+  "description" : "Function does not check the second iterator for over-read conditions (CWE-126)",
   "timeToFix" : 5
 }, {
   "patternId" : "erand48",
@@ -651,7 +661,12 @@
 }, {
   "patternId" : "gsignal",
   "title" : "Finds potential security problems in gsignal calls",
-  "description" : "These functions are considered obsolete on most systems, and very non-poertable (Linux-based systems handle them radically different, basically if gsignal/ssignal were the same as raise/signal respectively, while System V considers them a separate set and obsolete) (CWE-676)",
+  "description" : "These functions are considered obsolete on most systems, and very non-portable (Linux-based systems handle them radically different, basically if gsignal/ssignal were the same as raise/signal respectively, while System V considers them a separate set and obsolete) (CWE-676)",
+  "timeToFix" : 5
+}, {
+  "patternId" : "is_permutation",
+  "title" : "Finds potential security problems in is_permutation calls",
+  "description" : "Function does not check the second iterator for over-read conditions (CWE-126)",
   "timeToFix" : 5
 }, {
   "patternId" : "jrand48",
@@ -742,6 +757,11 @@
   "patternId" : "memcpy",
   "title" : "Finds potential security problems in memcpy calls",
   "description" : "Does not check for buffer overflows when copying to destination (CWE-120)",
+  "timeToFix" : 5
+}, {
+  "patternId" : "mismatch",
+  "title" : "Finds potential security problems in mismatch calls",
+  "description" : "Function does not check the second iterator for over-read conditions (CWE-126)",
   "timeToFix" : 5
 }, {
   "patternId" : "mkstemp",
@@ -861,7 +881,7 @@
 }, {
   "patternId" : "ssignal",
   "title" : "Finds potential security problems in ssignal calls",
-  "description" : "These functions are considered obsolete on most systems, and very non-poertable (Linux-based systems handle them radically different, basically if gsignal/ssignal were the same as raise/signal respectively, while System V considers them a separate set and obsolete) (CWE-676)",
+  "description" : "These functions are considered obsolete on most systems, and very non-portable (Linux-based systems handle them radically different, basically if gsignal/ssignal were the same as raise/signal respectively, while System V considers them a separate set and obsolete) (CWE-676)",
   "timeToFix" : 5
 }, {
   "patternId" : "strCatBuff",
