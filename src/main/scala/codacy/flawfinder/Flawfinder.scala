@@ -9,11 +9,11 @@ import scala.util.Try
 object Flawfinder extends Tool {
 
   override def apply(
-                      source: Source.Directory,
-                      conf: Option[List[Pattern.Definition]],
-                      files: Option[Set[Source.File]],
-                      options: Map[Options.Key, Options.Value]
-                    )(implicit specification: Tool.Specification): Try[List[Result]] = {
+      source: Source.Directory,
+      conf: Option[List[Pattern.Definition]],
+      files: Option[Set[Source.File]],
+      options: Map[Options.Key, Options.Value]
+  )(implicit specification: Tool.Specification): Try[List[Result]] = {
     Try {
       val filesToLint: List[String] = files.fold(List(source.path)) { paths =>
         paths.map(_.toString).toList
@@ -37,7 +37,10 @@ object Flawfinder extends Tool {
   private def parseToolResult(resultFromTool: List[String], wasRequested: String => Boolean): List[Result] = {
     resultFromTool.flatMap {
       case LineRegex(filename, lineNumber, patternId, message) if wasRequested(patternId) =>
-        Option(Result.Issue(Source.File(filename), Result.Message(message), Pattern.Id(patternId), Source.Line(lineNumber.toInt)))
+        Option(
+          Result
+            .Issue(Source.File(filename), Result.Message(message), Pattern.Id(patternId), Source.Line(lineNumber.toInt))
+        )
       case _ =>
         Option.empty[Result]
     }
