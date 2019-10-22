@@ -1,13 +1,17 @@
-FROM codacy-flawfinder-base:latest
+FROM openjdk:8-jre-alpine
 
-LABEL maintainer="team@codacy.com"
+ARG toolVersion
 
-RUN adduser -u 2004 -D docker
-WORKDIR /opt/docker
+RUN \
+    apk add --no-cache bash python3 && \
+    apk add --no-cache -t .required_apks python3-dev py-setuptools && \
+    wget --no-check-certificate -O /tmp/flawfinder.tar.gz https://www.dwheeler.com/flawfinder/flawfinder-$toolVersion.tar.gz && \
+    tar -zxf /tmp/flawfinder.tar.gz -C /tmp && \
+    cd /tmp/flawfinder-$toolVersion && \
+    python3 setup.py build && \
+    python3 setup.py install --prefix=/usr --root=/ && \
+    apk del .required_apks && \
+    rm -rf /tmp/* && \
+    rm -rf /var/cache/apk/*
 
-COPY --chown=docker:docker "target/docker/stage/opt/docker" "/opt/docker"
-COPY --chown=docker:docker src/main/resources/docs /docs
-
-USER docker
-ENTRYPOINT ["bin/codacy-flawfinder"]
-CMD []
+ENTRYPOINT ["/usr/bin/flawfinder"]
