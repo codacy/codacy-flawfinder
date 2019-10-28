@@ -1,10 +1,10 @@
 //#Patterns: strcpy
 
-// Buggy é
+// Buggy ï¿½
 
 main() {
  char x[1];
- //#Info: strcpy
- strcpy(x,"aaaaé");
+ //#Error: strcpy
+ strcpy(x,"aaaaï¿½");
 }
 
