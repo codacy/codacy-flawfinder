@@ -1,0 +1,1 @@
+../../../tests/buggy-latin1.c

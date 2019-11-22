@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<checkstyle version="4.3">
+    <file name="buggy-latin1.c">
+        <error source="strcpy" line="8" message="Does not check for buffer overflows when copying to destination [MS-banned] (CWE-120).  Consider using snprintf, strcpy_s, or strlcpy (warning: strncpy easily misused). Risk is low because the source is a constant string." severity="error" />
+    </file>
+    <file name="test.c">
+        <error source="strcpy" line="17" message="Does not check for buffer overflows when copying to destination [MS-banned] (CWE-120).  Consider using snprintf, strcpy_s, or strlcpy (warning: strncpy easily misused). " severity="error" />
+        <error source="strcpy" line="16" message="Does not check for buffer overflows when copying to destination [MS-banned] (CWE-120).  Consider using snprintf, strcpy_s, or strlcpy (warning: strncpy easily misused). Risk is low because the source is a constant string." severity="error" />
+        <error source="strcpy" line="15" message="Does not check for buffer overflows when copying to destination [MS-banned] (CWE-120).  Consider using snprintf, strcpy_s, or strlcpy (warning: strncpy easily misused). Risk is low because the source is a constant character." severity="error" />
+    </file>
+</checkstyle>
