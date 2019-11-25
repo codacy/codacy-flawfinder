@@ -1,12 +1,8 @@
 import com.typesafe.sbt.packager.docker.Cmd
 
-name := """codacy-flawfinder"""
+name := "codacy-flawfinder"
 
-version := "1.0.0-SNAPSHOT"
-
-val languageVersion = "2.13.1"
-
-scalaVersion := languageVersion
+scalaVersion := "2.13.1"
 
 libraryDependencies ++= Seq(
   "com.codacy" %% "codacy-engine-scala-seed" % "3.1.0",
@@ -37,7 +33,7 @@ daemonUser in Docker := dockerUser
 
 daemonGroup in Docker := dockerGroup
 
-dockerBaseImage := "codacy-flawfinder-base:latest"
+dockerBaseImage := "codacy-flawfinder-base"
 
 dockerEntrypoint := Seq(s"/opt/docker/bin/${name.value}")
 

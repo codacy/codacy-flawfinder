@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<checkstyle version="4.3">
+    <file name="demo.cpp">
+        <error source="getenv" line="79" message="Environment variables are untrustable input if they can be set by an attacker.  They can have any content and length, and the same variable can be set more than once (CWE-807, CWE-20).  Check environment variables carefully before using them. " severity="warning" />
+        <error source="atoi" line="81" message="Unless checked, the resulting number can exceed the expected range (CWE-190).  If source untrusted, check both minimum and maximum, even if the input had no minus sign (large numbers can roll over into negative number; consider saving to an unsigned value if that is intended). " severity="info" />
+        <error source="strncpy" line="77" message="Easily used incorrectly; doesn't always \0-terminate or check for invalid pointers [MS-banned] (CWE-120).  " severity="info" />
+        <error source="fopen" line="97" message="Check when opening files - can an attacker redirect it (via symlinks), force the opening of special file type (e.g., device files), move things around to create a race condition, control its ancestors, or change its contents? (CWE-362).  " severity="info" />
+        <error source="getenv" line="75" message="Environment variables are untrustable input if they can be set by an attacker.  They can have any content and length, and the same variable can be set more than once (CWE-807, CWE-20).  Check environment variables carefully before using them. " severity="warning" />
+    </file>
+</checkstyle>
