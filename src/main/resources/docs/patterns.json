@@ -20,17 +20,17 @@
     "patternId" : "CreateProcess",
     "level" : "Warning",
     "category" : "Security",
-    "subcategory" : "InsecureModulesLibraries"
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "CreateProcessAsUser",
     "level" : "Warning",
     "category" : "Security",
-    "subcategory" : "InsecureModulesLibraries"
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "CreateProcessWithLogon",
     "level" : "Warning",
     "category" : "Security",
-    "subcategory" : "InsecureModulesLibraries"
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "EVP_des_cbc",
     "level" : "Error",
@@ -74,8 +74,7 @@
   }, {
     "patternId" : "EnterCriticalSection",
     "level" : "Warning",
-    "category" : "Security",
-    "subcategory" : "Other"
+    "category" : "Security"
   }, {
     "patternId" : "GetTempFileName",
     "level" : "Warning",
@@ -104,8 +103,7 @@
   }, {
     "patternId" : "InitializeCriticalSection",
     "level" : "Warning",
-    "category" : "Security",
-    "subcategory" : "Other"
+    "category" : "Security"
   }, {
     "patternId" : "LoadLibrary",
     "level" : "Warning",
@@ -140,7 +138,7 @@
     "patternId" : "ShellExecute",
     "level" : "Error",
     "category" : "Security",
-    "subcategory" : "InsecureModulesLibraries"
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "StrCat",
     "level" : "Error",
@@ -250,7 +248,7 @@
     "patternId" : "WinExec",
     "level" : "Error",
     "category" : "Security",
-    "subcategory" : "InsecureModulesLibraries"
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "_ftcscat",
     "level" : "Error",
@@ -490,27 +488,27 @@
     "patternId" : "execl",
     "level" : "Error",
     "category" : "Security",
-    "subcategory" : "InsecureModulesLibraries"
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "execle",
     "level" : "Error",
     "category" : "Security",
-    "subcategory" : "InsecureModulesLibraries"
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "execlp",
     "level" : "Error",
     "category" : "Security",
-    "subcategory" : "InsecureModulesLibraries"
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "execv",
     "level" : "Error",
     "category" : "Security",
-    "subcategory" : "InsecureModulesLibraries"
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "execvp",
     "level" : "Error",
     "category" : "Security",
-    "subcategory" : "InsecureModulesLibraries"
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "fgetc",
     "level" : "Info",
@@ -795,7 +793,7 @@
     "patternId" : "popen",
     "level" : "Error",
     "category" : "Security",
-    "subcategory" : "InsecureModulesLibraries"
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "printf",
     "level" : "Error",
@@ -975,7 +973,7 @@
     "patternId" : "system",
     "level" : "Error",
     "category" : "Security",
-    "subcategory" : "InsecureModulesLibraries"
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "tempnam",
     "level" : "Warning",
