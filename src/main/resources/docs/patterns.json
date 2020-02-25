@@ -4,59 +4,73 @@
   "patterns" : [ {
     "patternId" : "AddAccessAllowedAce",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "Visibility"
   }, {
     "patternId" : "CoImpersonateClient",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "CopyMemory",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "CreateProcess",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "CreateProcessAsUser",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "CreateProcessWithLogon",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "EVP_des_cbc",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "Cryptography"
   }, {
     "patternId" : "EVP_des_cfb",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "Cryptography"
   }, {
     "patternId" : "EVP_des_ecb",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "Cryptography"
   }, {
     "patternId" : "EVP_des_ofb",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "Cryptography"
   }, {
     "patternId" : "EVP_desx_cbc",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "Cryptography"
   }, {
     "patternId" : "EVP_rc2_40_cbc",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "Cryptography"
   }, {
     "patternId" : "EVP_rc2_64_cbc",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "Cryptography"
   }, {
     "patternId" : "EVP_rc4_40",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "Cryptography"
   }, {
     "patternId" : "EnterCriticalSection",
     "level" : "Warning",
@@ -64,23 +78,28 @@
   }, {
     "patternId" : "GetTempFileName",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "InsecureStorage"
   }, {
     "patternId" : "ImpersonateDdeClientWindow",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "ImpersonateLoggedOnUser",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "ImpersonateNamedPipeClient",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "ImpersonateSecurityContext",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "InitializeCriticalSection",
     "level" : "Warning",
@@ -88,810 +107,1012 @@
   }, {
     "patternId" : "LoadLibrary",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "MaliciousCode"
   }, {
     "patternId" : "LoadLibraryEx",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "MaliciousCode"
   }, {
     "patternId" : "MultiByteToWideChar",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "RpcImpersonateClient",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "SetSecurityDescriptorDacl",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "Visibility"
   }, {
     "patternId" : "SetThreadToken",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "ShellExecute",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "StrCat",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "StrCatA",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "StrCatBuffA",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "StrCatBuffW",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "StrCatChainW",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "StrCatN",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "StrCatNA",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "StrCatNW",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "StrCpy",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "StrCpyA",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "StrCpyN",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "StrCpyNA",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "StrCpyNW",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "StrNCat",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "StrNCatA",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "StrNCatW",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "StrNCpy",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "StrNCpyA",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "StrNCpyW",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "StrcatW",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "TCHAR",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "WinExec",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "_ftcscat",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "_ftcscpy",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "_ftprintf",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "_ftscanf",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "_gettc",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "_getts",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "_mbccat",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "_mbccpy",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "_mbscat",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "_mbscpy",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "_mbslen",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "InputValidation"
   }, {
     "patternId" : "_mbsnbcat",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "_mbsnbcpy",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "_mbsncpy",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "_snprintf",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "_sntprintf",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "_stprintf",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "_tccat",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "_tccpy",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "_tcscat",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "_tcscpy",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "_tcslen",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "InputValidation"
   }, {
     "patternId" : "_tcsncat",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "_tcsncpy",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "_tscanf",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "_vftprintf",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "_vsntprintf",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "_vstprintf",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "_vtprintf",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "_wtoi",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "UnexpectedBehaviour"
   }, {
     "patternId" : "_wtoi64",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "UnexpectedBehaviour"
   }, {
     "patternId" : "access",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "DoS"
   }, {
     "patternId" : "atoi",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "UnexpectedBehaviour"
   }, {
     "patternId" : "atol",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "UnexpectedBehaviour"
   }, {
     "patternId" : "bcopy",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "char",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "chgrp",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "DoS"
   }, {
     "patternId" : "chmod",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "DoS"
   }, {
     "patternId" : "chown",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "DoS"
   }, {
     "patternId" : "chroot",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "crypt",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "Cryptography"
   }, {
     "patternId" : "crypt_r",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "Cryptography"
   }, {
     "patternId" : "curl_getenv",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "UnexpectedBehaviour"
   }, {
     "patternId" : "cuserid",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "drand48",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "Cryptography"
   }, {
     "patternId" : "equal",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "InputValidation"
   }, {
     "patternId" : "erand48",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "Cryptography"
   }, {
     "patternId" : "execl",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "execle",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "execlp",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "execv",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "execvp",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "fgetc",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "fopen",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "DoS"
   }, {
     "patternId" : "fprintf",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "fread",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "InputValidation"
   }, {
     "patternId" : "fscanf",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "fvwprintf",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "fwprintf",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "fwscanf",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "g_get_home_dir",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "UnexpectedBehaviour"
   }, {
     "patternId" : "g_get_tmp_dir",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "UnexpectedBehaviour"
   }, {
     "patternId" : "g_rand_boolean",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "Cryptography"
   }, {
     "patternId" : "g_rand_double",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "Cryptography"
   }, {
     "patternId" : "g_rand_double_range",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "Cryptography"
   }, {
     "patternId" : "g_rand_int",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "Cryptography"
   }, {
     "patternId" : "g_rand_int_range",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "Cryptography"
   }, {
     "patternId" : "g_random_boolean",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "Cryptography"
   }, {
     "patternId" : "g_random_double",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "Cryptography"
   }, {
     "patternId" : "g_random_double_range",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "Cryptography"
   }, {
     "patternId" : "g_random_int",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "Cryptography"
   }, {
     "patternId" : "g_random_int_range",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "Cryptography"
   }, {
     "patternId" : "getc",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "getchar",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "getenv",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "UnexpectedBehaviour"
   }, {
     "patternId" : "getlogin",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "UnexpectedBehaviour"
   }, {
     "patternId" : "getopt",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "getopt_long",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "getpass",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "InsecureModulesLibraries"
   }, {
     "patternId" : "getpw",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "InsecureModulesLibraries"
   }, {
     "patternId" : "gets",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "getwd",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "gsignal",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "InsecureModulesLibraries"
   }, {
     "patternId" : "is_permutation",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "InputValidation"
   }, {
     "patternId" : "jrand48",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "Cryptography"
   }, {
     "patternId" : "lcong48",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "Cryptography"
   }, {
     "patternId" : "lrand48",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "Cryptography"
   }, {
     "patternId" : "lstrcat",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "lstrcatA",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "lstrcatW",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "lstrcatn",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "lstrcatnA",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "lstrcatnW",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "lstrcpy",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "lstrcpyA",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "lstrcpyW",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "lstrcpyn",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "lstrcpynA",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "lstrcpynW",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "lstrncat",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "memalign",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "InsecureModulesLibraries"
   }, {
     "patternId" : "memcpy",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "mismatch",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "InputValidation"
   }, {
     "patternId" : "mkstemp",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "InsecureStorage"
   }, {
     "patternId" : "mktemp",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "InsecureStorage"
   }, {
     "patternId" : "mrand48",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "Cryptography"
   }, {
     "patternId" : "nrand48",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "Cryptography"
   }, {
     "patternId" : "open",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "DoS"
   }, {
     "patternId" : "popen",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "printf",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "random",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "Cryptography"
   }, {
     "patternId" : "read",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "readlink",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "DoS"
   }, {
     "patternId" : "readv",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "InputValidation"
   }, {
     "patternId" : "realpath",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "recv",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "InputValidation"
   }, {
     "patternId" : "recvfrom",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "InputValidation"
   }, {
     "patternId" : "recvmsg",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "InputValidation"
   }, {
     "patternId" : "scanf",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "seed48",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "Cryptography"
   }, {
     "patternId" : "setstate",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "Cryptography"
   }, {
     "patternId" : "snprintf",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "sprintf",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "srand",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "Cryptography"
   }, {
     "patternId" : "srandom",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "Cryptography"
   }, {
     "patternId" : "sscanf",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "ssignal",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "InsecureModulesLibraries"
   }, {
     "patternId" : "strCatBuff",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "strcadd",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "strcat",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "strccpy",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "strcpy",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "strcpyA",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "strcpyW",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "strcpynA",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "streadd",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "strecpy",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "strfry",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "Cryptography"
   }, {
     "patternId" : "strlen",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "InputValidation"
   }, {
     "patternId" : "strncat",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "strncpy",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "strtrns",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "swprintf",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "syslog",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "system",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "tempnam",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "InsecureStorage"
   }, {
     "patternId" : "tmpfile",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "InsecureStorage"
   }, {
     "patternId" : "tmpnam",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "InsecureStorage"
   }, {
     "patternId" : "ulimit",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "InsecureModulesLibraries"
   }, {
     "patternId" : "umask",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "Visibility"
   }, {
     "patternId" : "usleep",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "InsecureModulesLibraries"
   }, {
     "patternId" : "vfork",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "DoS"
   }, {
     "patternId" : "vfprintf",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "vfscanf",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "vfwprintf",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "vfwscanf",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "vprintf",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "vscanf",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "vsnprintf",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "vsprintf",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "vsscanf",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "vswprintf",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "vswscanf",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "vwprintf",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "vwscanf",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "wchar_t",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "wcscat",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "wcscpy",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "wcslen",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "InputValidation"
   }, {
     "patternId" : "wcsncat",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "wcsncpy",
     "level" : "Info",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "wprintf",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "wscanf",
     "level" : "Error",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   } ]
 }
