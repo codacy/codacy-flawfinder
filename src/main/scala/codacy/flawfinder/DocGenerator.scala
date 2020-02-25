@@ -3,6 +3,7 @@ package codacy.flawfinder
 import play.api.libs.json.{JsArray, Json}
 import better.files._
 import better.files
+import com.codacy.plugins.api.results.{Pattern, Result, Tool}
 
 object DocGenerator {
 
@@ -16,21 +17,31 @@ object DocGenerator {
     createPatternsAndDescriptionFile(version, rules)
   }
 
-  private def generatePatterns(rules: Seq[Ruleset]): JsArray = {
-    val codacyPatterns = rules.map { rule =>
-      val category: String = "Security"
+  private def getSubCategory(ruleset: Ruleset) = {
+    // if we have more than one sub-category, only consider first
+    val cwePatternRegex = """.*\(CWE-([0-9]+).*""".r
 
-      val level: String =
-        rule.level match {
-          case "3" => "Warning"
-          case "4" | "5" => "Error"
-          case _ => "Info"
-        }
-
-      Json.obj("patternId" -> rule.patternId, "level" -> level, "category" -> category)
-
+    // https://manpages.debian.org/jessie/flawfinder/flawfinder.1.en.html#COMMON_WEAKNESS_ENUMERATION_(CWE)
+    ruleset.description match {
+      case cwePatternRegex("20") => Pattern.Subcategory.InputValidation
+      case cwePatternRegex("22") => Pattern.Subcategory.FileAccess
+      case cwePatternRegex("78") => Pattern.Subcategory.InsecureModulesLibraries
+      case cwePatternRegex("119") => Pattern.Subcategory.CommandInjection
+      case cwePatternRegex("120") => Pattern.Subcategory.CommandInjection
+      case cwePatternRegex("126") => Pattern.Subcategory.InputValidation
+      case cwePatternRegex("134") => Pattern.Subcategory.CommandInjection
+      case cwePatternRegex("190") => Pattern.Subcategory.UnexpectedBehaviour
+      case cwePatternRegex("250") => Pattern.Subcategory.CommandInjection
+      case cwePatternRegex("327") => Pattern.Subcategory.Cryptography
+      case cwePatternRegex("362") => Pattern.Subcategory.DoS
+      case cwePatternRegex("377") => Pattern.Subcategory.InsecureStorage
+      case cwePatternRegex("676") => Pattern.Subcategory.InsecureModulesLibraries
+      case cwePatternRegex("732") => Pattern.Subcategory.Visibility
+      case cwePatternRegex("785") => Pattern.Subcategory.InputValidation
+      case cwePatternRegex("807") => Pattern.Subcategory.UnexpectedBehaviour
+      case cwePatternRegex("829") => Pattern.Subcategory.MaliciousCode
+      case _ => Pattern.Subcategory.Other
     }
-    Json.parse(Json.toJson(codacyPatterns).toString).as[JsArray]
   }
 
   private def generateDescriptions(rules: Seq[Ruleset]): JsArray = {
@@ -75,16 +86,27 @@ object DocGenerator {
     descriptionsFile.write(descriptions)
   }
 
+  private def getLevel(level: String) = level match {
+    case "3" => Result.Level.Warn
+    case "4" | "5" => Result.Level.Err
+    case _ => Result.Level.Info
+  }
+
   private def getPatterns(version: String, rules: Seq[DocGenerator.Ruleset]): String = {
-    Json.prettyPrint(
-      Json.obj(
-        "name" -> "flawfinder",
-        "version" -> version,
-        "patterns" -> Json
-          .parse(Json.toJson(generatePatterns(rules)).toString)
-          .as[JsArray]
-      )
-    )
+    val specifications =
+      rules.map { rule =>
+        Pattern.Specification(
+          Pattern.Id(rule.patternId),
+          getLevel(rule.level),
+          Pattern.Category.Security,
+          Option(getSubCategory(rule)),
+          None,
+          None
+        )
+      }.toSet
+
+    val spec = Tool.Specification(Tool.Name("flawfinder"), Some(Tool.Version(version)), specifications)
+    Json.prettyPrint(Json.toJson(spec))
   }
 
   private def getDescriptions(rules: Seq[DocGenerator.Ruleset]): String = {
