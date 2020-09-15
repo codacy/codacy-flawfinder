@@ -100,8 +100,9 @@ object DocGenerator {
           getLevel(rule.level),
           Pattern.Category.Security,
           getSubCategory(rule),
-          None,
-          None
+          Set.empty,
+          Set.empty,
+          enabled = DefaultPatterns.list.contains(rule.patternId)
         )
       }.toSet
 
