@@ -1,6 +1,7 @@
 package codacy.flawfinder
 
 object DefaultPatterns {
+
   val list = List(
     "_gettc",
     "_mbslen",

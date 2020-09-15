@@ -12,7 +12,8 @@ Check the **Docs** section for more information.
 You can create the docker by doing:
 
 ```bash
-./scripts/publish.sh codacy-flawfinder <VERSION>
+make all
+sbt docker:publishLocal
 ```
 
 The docker is ran with the following command:
@@ -26,7 +27,7 @@ docker run -it -v $srcDir:/src  <DOCKER_NAME>:<DOCKER_VERSION>
 1. Run the script, from the project root, to generate documentation:
 
 ```
-./scripts/generateDocs
+make all
 ```
 
 ## Docs
