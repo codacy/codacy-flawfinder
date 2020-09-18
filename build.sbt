@@ -5,7 +5,7 @@ name := "codacy-flawfinder"
 scalaVersion := "2.13.1"
 
 libraryDependencies ++= Seq(
-  "com.codacy" %% "codacy-engine-scala-seed" % "5.0.0",
+  "com.codacy" %% "codacy-engine-scala-seed" % "5.0.1",
   "com.github.pathikrit" %% "better-files" % "3.8.0"
 )
 
