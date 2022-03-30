@@ -3,7 +3,7 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/d8e01051a03945e7bb83785b5cbd904e)](https://www.codacy.com/gh/codacy/codacy-flawfinder?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=codacy/codacy-flawfinder&amp;utm_campaign=Badge_Grade)
 [![Build Status](https://circleci.com/gh/codacy/codacy-flawfinder.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/codacy/codacy-flawfinder)
 
-This is the docker engine we use at Codacy to have [Flawfinder](https://www.dwheeler.com/flawfinder/) support.
+This is the docker engine we use at Codacy to have [Flawfinder](https://dwheeler.com/flawfinder/) support.
 You can also create a docker to integrate the tool and language of your choice!
 Check the **Docs** section for more information.
 
