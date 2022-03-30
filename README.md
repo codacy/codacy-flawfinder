@@ -16,17 +16,17 @@ make all
 sbt docker:publishLocal
 ```
 
-The docker is ran with the following command:
+The docker image can be used with the following command:
 
 ```bash
-docker run -it -v $srcDir:/src  <DOCKER_NAME>:<DOCKER_VERSION>
+docker run -it -v $srcDir:/src <DOCKER_NAME>:<DOCKER_VERSION>
 ```
 
 #### Generate Docs
 
 1. Run the script, from the project root, to generate documentation:
 
-```
+```bash
 make all
 ```
 

@@ -69,11 +69,6 @@
   "description" : "These keysizes are too small given today's computers (CWE-327)",
   "timeToFix" : 5
 }, {
-  "patternId" : "EnterCriticalSection",
-  "title" : "Finds potential security problems in EnterCriticalSection calls",
-  "description" : "On some versions of Windows, exceptions can be thrown in low-memory situations",
-  "timeToFix" : 5
-}, {
   "patternId" : "GetTempFileName",
   "title" : "Finds potential security problems in GetTempFileName calls",
   "description" : "Temporary file race condition in certain cases (e.g., if run as SYSTEM in many versions of Windows) (CWE-377)",
