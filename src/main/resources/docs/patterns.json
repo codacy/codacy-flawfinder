@@ -1,6 +1,6 @@
 {
   "name" : "flawfinder",
-  "version" : "2.0.11",
+  "version" : "2.0.19",
   "patterns" : [ {
     "patternId" : "AddAccessAllowedAce",
     "level" : "Warning",
@@ -110,13 +110,6 @@
     "level" : "Error",
     "category" : "Security",
     "subcategory" : "Cryptography",
-    "parameters" : [ ],
-    "languages" : [ ],
-    "enabled" : false
-  }, {
-    "patternId" : "EnterCriticalSection",
-    "level" : "Warning",
-    "category" : "Security",
     "parameters" : [ ],
     "languages" : [ ],
     "enabled" : false

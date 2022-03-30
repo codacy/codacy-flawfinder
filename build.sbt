@@ -2,21 +2,21 @@ import com.typesafe.sbt.packager.docker.Cmd
 
 name := "codacy-flawfinder"
 
-scalaVersion := "2.13.1"
+scalaVersion := "2.13.8"
 
 libraryDependencies ++= Seq(
   "com.codacy" %% "codacy-engine-scala-seed" % "5.0.1",
   "com.github.pathikrit" %% "better-files" % "3.8.0"
 )
 
-mainClass in Compile := Some("codacy.Engine")
+Compile / mainClass := Some("codacy.Engine")
 
 enablePlugins(JavaAppPackaging)
 
 enablePlugins(DockerPlugin)
 
-mappings in Universal ++= {
-  (resourceDirectory in Compile) map { resourceDir: File =>
+Universal / mappings ++= {
+  (Compile / resourceDirectory) map { resourceDir: File =>
     val src = resourceDir / "docs"
     val dest = "/docs"
 
@@ -29,12 +29,10 @@ mappings in Universal ++= {
 val dockerUser = "docker"
 val dockerGroup = "docker"
 
-daemonUser in Docker := dockerUser
-
-daemonGroup in Docker := dockerGroup
+Docker / daemonUser := dockerUser
+Docker / daemonGroup := dockerGroup
 
 dockerBaseImage := "codacy-flawfinder-base"
-
 dockerEntrypoint := Seq(s"/opt/docker/bin/${name.value}")
 
 dockerCommands := dockerCommands.value.flatMap {
