@@ -96,7 +96,7 @@
 }, {
   "patternId" : "InitializeCriticalSection",
   "title" : "Finds potential security problems in InitializeCriticalSection calls",
-  "description" : "Exceptions can be thrown in low-memory situations",
+  "description" : "Exceptions can be thrown in low-memory situations (CWE-248, CWE-400)",
   "timeToFix" : 5
 }, {
   "patternId" : "LoadLibrary",
@@ -401,7 +401,7 @@
 }, {
   "patternId" : "access",
   "title" : "Finds potential security problems in access calls",
-  "description" : "This usually indicates a security flaw.  If an attacker can change anything along the path between the call to access() and the file's actual use (e.g., by moving files), the attacker can exploit the race condition (CWE-362/CWE-367!)",
+  "description" : "This usually indicates a security flaw. If an attacker can change anything along the path between the call to access() and the file's actual use (e.g., by moving files), the attacker can exploit the race condition (CWE-362/CWE-367!)",
   "timeToFix" : 5
 }, {
   "patternId" : "atoi",
@@ -456,12 +456,12 @@
 }, {
   "patternId" : "curl_getenv",
   "title" : "Finds potential security problems in curl_getenv calls",
-  "description" : "Environment variables are untrustable input if they can be set by an attacker.  They can have any content and length, and the same variable can be set more than once (CWE-807, CWE-20)",
+  "description" : "Environment variables are untrustable input if they can be set by an attacker. They can have any content and length, and the same variable can be set more than once (CWE-807, CWE-20)",
   "timeToFix" : 5
 }, {
   "patternId" : "cuserid",
   "title" : "Finds potential security problems in cuserid calls",
-  "description" : "Exactly what cuserid() does is poorly defined (e.g., some systems use the effective uid, like Linux, while others like System V use the real uid). Thus, you can't trust what it does. It's certainly not portable (The cuserid function was included in the 1988 version of POSIX, but removed from the 1990 version).  Also, if passed a non-null parameter, there's a risk of a buffer overflow if the passed-in buffer is not at least L_cuserid characters long (CWE-120)",
+  "description" : "Exactly what cuserid() does is poorly defined (e.g., some systems use the effective uid, like Linux, while others like System V use the real uid). Thus, you can't trust what it does. It's certainly not portable (The cuserid function was included in the 1988 version of POSIX, but removed from the 1990 version). Also, if passed a non-null parameter, there's a risk of a buffer overflow if the passed-in buffer is not at least L_cuserid characters long (CWE-120)",
   "timeToFix" : 5
 }, {
   "patternId" : "drand48",
@@ -546,12 +546,12 @@
 }, {
   "patternId" : "g_get_home_dir",
   "title" : "Finds potential security problems in g_get_home_dir calls",
-  "description" : "This function is synonymous with 'getenv(\"HOME\")';it returns untrustable input if the environment can beset by an attacker.  It can have any content and length, and the same variable can be set more than once (CWE-807, CWE-20)",
+  "description" : "This function is synonymous with 'getenv(\"HOME\")';it returns untrustable input if the environment can beset by an attacker. It can have any content and length, and the same variable can be set more than once (CWE-807, CWE-20)",
   "timeToFix" : 5
 }, {
   "patternId" : "g_get_tmp_dir",
   "title" : "Finds potential security problems in g_get_tmp_dir calls",
-  "description" : "This function is synonymous with 'getenv(\"TMP\")';it returns untrustable input if the environment can beset by an attacker.  It can have any content and length, and the same variable can be set more than once (CWE-807, CWE-20)",
+  "description" : "This function is synonymous with 'getenv(\"TMP\")';it returns untrustable input if the environment can beset by an attacker. It can have any content and length, and the same variable can be set more than once (CWE-807, CWE-20)",
   "timeToFix" : 5
 }, {
   "patternId" : "g_rand_boolean",
@@ -616,12 +616,12 @@
 }, {
   "patternId" : "getenv",
   "title" : "Finds potential security problems in getenv calls",
-  "description" : "Environment variables are untrustable input if they can be set by an attacker.  They can have any content and length, and the same variable can be set more than once (CWE-807, CWE-20)",
+  "description" : "Environment variables are untrustable input if they can be set by an attacker. They can have any content and length, and the same variable can be set more than once (CWE-807, CWE-20)",
   "timeToFix" : 5
 }, {
   "patternId" : "getlogin",
   "title" : "Finds potential security problems in getlogin calls",
-  "description" : "It's often easy to fool getlogin.  Sometimes it does not work at all, because some program messed up the utmp file.  Often, it gives only the first 8 characters of the login name. The user currently logged in on the controlling tty of our program need not be the user who started it.  Avoid getlogin() for security-related purposes (CWE-807)",
+  "description" : "It's often easy to fool getlogin. Sometimes it does not work at all, because some program messed up the utmp file. Often, it gives only the first 8 characters of the login name. The user currently logged in on the controlling tty of our program need not be the user who started it. Avoid getlogin() for security-related purposes (CWE-807)",
   "timeToFix" : 5
 }, {
   "patternId" : "getopt",
@@ -636,12 +636,12 @@
 }, {
   "patternId" : "getpass",
   "title" : "Finds potential security problems in getpass calls",
-  "description" : "This function is obsolete and not portable. It was in SUSv2 but removed by POSIX.2.  What it does exactly varies considerably between systems, particularly in where its prompt is displayed and where it gets its data (e.g., /dev/tty, stdin, stderr, etc.). In addition, some implementations overflow buffers. (CWE-676, CWE-120, CWE-20)",
+  "description" : "This function is obsolete and not portable. It was in SUSv2 but removed by POSIX.2. What it does exactly varies considerably between systems, particularly in where its prompt is displayed and where it gets its data (e.g., /dev/tty, stdin, stderr, etc.). In addition, some implementations overflow buffers. (CWE-676, CWE-120, CWE-20)",
   "timeToFix" : 5
 }, {
   "patternId" : "getpw",
   "title" : "Finds potential security problems in getpw calls",
-  "description" : "This function is dangerous; it may overflow the provided buffer. It extracts data from a 'protected' area, but most systems have many commands to let users modify the protected area, and it's not always clear what their limits are.  Best to avoid using this function altogether (CWE-676, CWE-120)",
+  "description" : "This function is dangerous; it may overflow the provided buffer. It extracts data from a 'protected' area, but most systems have many commands to let users modify the protected area, and it's not always clear what their limits are. Best to avoid using this function altogether (CWE-676, CWE-120)",
   "timeToFix" : 5
 }, {
   "patternId" : "gets",
@@ -746,7 +746,7 @@
 }, {
   "patternId" : "memalign",
   "title" : "Finds potential security problems in memalign calls",
-  "description" : "On some systems (though not Linux-based systems) an attempt to free() results from memalign() may fail. This may, on a few systems, be exploitable.  Also note that memalign() may not check that the boundary parameter is correct (CWE-676)",
+  "description" : "On some systems (though not Linux-based systems) an attempt to free() results from memalign() may fail. This may, on a few systems, be exploitable. Also note that memalign() may not check that the boundary parameter is correct (CWE-676)",
   "timeToFix" : 5
 }, {
   "patternId" : "memcpy",
@@ -761,7 +761,7 @@
 }, {
   "patternId" : "mkstemp",
   "title" : "Finds potential security problems in mkstemp calls",
-  "description" : "Potential for temporary file vulnerability in some circumstances.  Some older Unix-like systems create temp files with permission to write by all by default, so be sure to set the umask to override this. Also, some older Unix systems might fail to use O_EXCL when opening the file, so make sure that O_EXCL is used by the library (CWE-377)",
+  "description" : "Potential for temporary file vulnerability in some circumstances. Some older Unix-like systems create temp files with permission to write by all by default, so be sure to set the umask to override this. Also, some older Unix systems might fail to use O_EXCL when opening the file, so make sure that O_EXCL is used by the library (CWE-377)",
   "timeToFix" : 5
 }, {
   "patternId" : "mktemp",
@@ -806,7 +806,7 @@
 }, {
   "patternId" : "readlink",
   "title" : "Finds potential security problems in readlink calls",
-  "description" : "This accepts filename arguments; if an attacker can move those files or change the link content, a race condition results.  Also, it does not terminate with ASCII NUL. (CWE-362, CWE-20)",
+  "description" : "This accepts filename arguments; if an attacker can move those files or change the link content, a race condition results. Also, it does not terminate with ASCII NUL. (CWE-362, CWE-20)",
   "timeToFix" : 5
 }, {
   "patternId" : "readv",
@@ -996,7 +996,7 @@
 }, {
   "patternId" : "usleep",
   "title" : "Finds potential security problems in usleep calls",
-  "description" : "This C routine is considered obsolete (as opposed to the shell command by the same name).   The interaction of this function with SIGALRM and other timer functions such as sleep(), alarm(), setitimer(), and nanosleep() is unspecified (CWE-676)",
+  "description" : "This C routine is considered obsolete (as opposed to the shell command by the same name). The interaction of this function with SIGALRM and other timer functions such as sleep(), alarm(), setitimer(), and nanosleep() is unspecified (CWE-676)",
   "timeToFix" : 5
 }, {
   "patternId" : "vfork",
